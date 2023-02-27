@@ -8,7 +8,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
-import { slideInAnimation } from './route-animation';
+import { AppRoutingModule } from "./app-routing.module";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { slideInAnimation } from './route-animation';
     NgbModule,
     FormsModule,
     NgClass,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
