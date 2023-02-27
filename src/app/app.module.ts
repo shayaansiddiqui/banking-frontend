@@ -8,12 +8,14 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
+import { slideInAnimation } from './route-animation';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent  ],
+    RegistrationComponent
+    ],
   imports: [
     BrowserModule,
     NgbModule,
