@@ -1,15 +1,33 @@
 
-<nav class="navbar is-info" role="navigation">
-
-
-</nav>
-
 <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Banking Site</a>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="javascript:void(0);" routerLink="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="Registration">Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="Login">Login</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <a href="#Login" routerLink="Login">Login</a> -->
+    </nav>
+  </div>
+     
+  <div class="container">
+    <router-outlet/> 
+   <!-- <app-registration></app-registration> -->
+  </div>
 
-<!-- <router-outlet></router-outlet> -->
-</div> 
+<!-- <div class="container">
 
-<app-registration></app-registration>
+<app-login></app-login>
+<!-- <app-registration></app-registration> 
 
-
-
+</div> -->

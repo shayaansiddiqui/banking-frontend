@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { animate,trigger,transition,style, state } from "@angular/animations";
+import { ActivatedRoute, Router  } from '@angular/router';
+
 declare var window:any;
+
+
+
 export class User {
   public name!: string;
   public email!: string;
@@ -14,10 +20,11 @@ export class User {
 import { NgClass } from '@angular/common';
 declare var $:any;
 
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css'],
+  styleUrls: ['./registration.component.css']
   
 })
 export class RegistrationComponent {
@@ -30,22 +37,20 @@ export class RegistrationComponent {
     'Baking',
   ];
   formModal : any;
+  isShow = false;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal,private router: Router, private activeRouter : ActivatedRoute) {}
   onSubmit(form: any) {
-    console.log(form.value);
+   // console.log(form.value);
   }
 
   showModal(element?:any) {
-		
   }
 
-  // openModal(){
-  //   this.formModal.show();
-  // }
-
   openWindowCustomClass(content:any) {
-		this.modalService.open(content, { windowClass: 'dark-modal' });
+    console.log("clicked !");
+    this.isShow = !this.isShow;
+    this.router.navigate(['/Login']);
 	}
 
 }

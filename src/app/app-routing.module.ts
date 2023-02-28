@@ -1,27 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from "@angular/router";
+import { RouterModule,Routes } from "@angular/router";
 import { RegistrationComponent } from "./registration/registration.component";
 import { AppComponent } from './app.component';
-
-
+import { LoginComponent } from './login/login.component';
+import { animate, animation, style,state, transition, trigger, query, group } from '@angular/animations';
+const routes: Routes = [
+  {path : '', component : AppComponent},
+  {path : 'Registration', component : RegistrationComponent},
+  {path : 'Login', component : LoginComponent}
+];
+  
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: '/home' },
-      { path: 'home', component: AppComponent  },
-      { path: 'registration', component: RegistrationComponent  },
-      ])
-  ]
+    RouterModule.forRoot(routes)
+  ],
+  exports:[RouterModule]
+  
+
   
 })
-export class AppRoutingModule { }
 
-// const routes: Routes = [
-//   { path: '', pathMatch: 'full', redirectTo: '/home' },
-//   { path: 'home', component: HomeComponent , data: {animation: 'Home'} },
-//   { path: 'article/:id', component: ArticleComponent , data: {animation: 'Article'} },
-//   ];
+
+export class AppRoutingModule {
+
+  
+
+ }
+
+
+
