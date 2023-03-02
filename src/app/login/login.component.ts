@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
 export class User {
  
   public email!: string;
@@ -14,9 +16,12 @@ export class User {
 export class LoginComponent {
   model = new User();
  
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
   onSubmit(form: any) {
     console.log(form.value);
+  }
+  openDialog(){
+    this.dialog.open(LoginComponent);
   }
 
 }

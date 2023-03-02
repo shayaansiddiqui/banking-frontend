@@ -1,9 +1,9 @@
 <div class="container">
     <div><h2 class="text-center m-3 p-3x"> Registration Form </h2></div>
-<div class="centerRegistrationForm animate__animated animate__zoomInDown mt-5 mr-5 ">
-  
+<div class="centerRegistrationForm mt-5 mr-5 ">
+  <!-- animate__animated animate__zoomInDown  -->
 <div class="card">
-    <div class="card-body p-4" style="background-color: #a6a6a696;">
+    <div class="card-body p-4">
 <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="row">
         <div class="col-md-6">
@@ -84,15 +84,12 @@
         <label>Zip</label>
         <input type="text" name="zip" class="form-control" [(ngModel)]="model.zip" required>
       </div></div></div>
-
-    <div class="form-group text-center">
-      <button class="btn btn-block" style="background: dimgray">Submit</button>
-    
-      <button class="btn btn-outline-primary mb-2 me-" (click)="openWindowCustomClass($event)">
+      <a class="form-group" (click)="openWindowCustomClass($event)">
         Login
-      </button>
-
-</div>
+      </a>
+    <div class="form-group text-center">
+      <button class="btn btn-block submit">Submit</button>
+    </div>
 </form>
 </div>
 </div>

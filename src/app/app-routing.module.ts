@@ -4,13 +4,14 @@ import { RouterModule,Routes } from "@angular/router";
 import { RegistrationComponent } from "./registration/registration.component";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { animate, animation, style,state, transition, trigger, query, group } from '@angular/animations';
+
+
 const routes: Routes = [
-  {path : '', component : AppComponent},
-  {path : 'Registration', component : RegistrationComponent},
-  {path : 'Login', component : LoginComponent}
+        {path : '#', component : AppComponent},
+        {path : 'Registration', component : RegistrationComponent, data:{ animation : 'isDown'}},
+        {path : 'Login', component : LoginComponent, data:{ animation : 'isUp'}}
 ];
-  
+
 
 @NgModule({
   declarations: [],
@@ -20,14 +21,10 @@ const routes: Routes = [
   ],
   exports:[RouterModule]
   
-
-  
 })
 
 
 export class AppRoutingModule {
-
-  
 
  }
 

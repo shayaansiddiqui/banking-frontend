@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { animate,trigger,transition,style, state } from "@angular/animations";
 import { ActivatedRoute, Router  } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
 
 declare var window:any;
 
@@ -39,7 +41,9 @@ export class RegistrationComponent {
   formModal : any;
   isShow = false;
 
-  constructor(private modalService: NgbModal,private router: Router, private activeRouter : ActivatedRoute) {}
+  constructor(private modalService: NgbModal,private router: Router, private activeRouter : ActivatedRoute, private dialog: MatDialog) {}
+  
+ 
   onSubmit(form: any) {
    // console.log(form.value);
   }
@@ -53,4 +57,9 @@ export class RegistrationComponent {
     this.router.navigate(['/Login']);
 	}
 
+  //  openDialog(){
+  //    this.dialog.open(LoginComponent);
+  //  }
 }
+
+
