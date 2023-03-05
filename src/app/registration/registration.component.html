@@ -4,7 +4,7 @@
   <!-- animate__animated animate__zoomInDown  -->
 <div class="card">
     <div class="card-body p-4">
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="was-validated">
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
 
     <div class="row">
         <div class="col-md-6">
@@ -27,14 +27,14 @@
      
         <div class="form-group p-3">
           <label>First Name</label>
-          <input type="text" name="firstName" [(ngModel)]="model.fName" class="form-control"  required>
+          <input type="text" name="firstName" [(ngModel)]="model.firstName" class="form-control"  required>
         </div>
       </div>
         <div class="col-md-6">
             
           <div class="form-group p-3">
             <label>Last Name</label>
-            <input type="text" name="lastName" [(ngModel)]="model.lName" class="form-control" required>
+            <input type="text" name="lastName" [(ngModel)]="model.lastName" class="form-control" required>
           </div>
         </div>
         </div>
@@ -68,7 +68,7 @@
               <label>Date Of Birth</label>
               <div class="ro">
               
-              <input type="text" name="date" ngModel class="form-control" ngbDatepicker #d="ngbDatepicker" required/>
+              <input type="text" name="dateOfBirth" ngModel class="form-control" ngbDatepicker #d="ngbDatepicker"/>
             
               <button (click)="d.toggle()"><i class="fa fa-calendar" aria-hidden="true" ></i> </button>
       </div></div>
@@ -90,39 +90,20 @@
       
         </div>
       <div class="row">
-        
-          <div class="col-md-6 mb-4">
-            <div class="form-group p-3">
-              <label>Fax Number</label>
-              <input type="text" name="faxNumber" [(ngModel)]="model.faxNumber" class="form-control" required>
-            </div>
-              </div>
-        
-
+   
         <div class="col-md-6 mb-4">
           <div class="form-group p-3">
             <label>Phone</label>
             <input type="text" name="phone" [(ngModel)]="model.phone" class="form-control" required>
           </div>
             </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-group p-3">
+                <label>Address</label>
+                <textarea class="address" type="textarea" name="address" class="form-control" [(ngModel)]="model.address" required></textarea>
+              </div>
+              </div>
       </div>
-      <div class="row">
-        <div class="col-md-6 mb-4">
-        <div class="form-group p-3">
-          <label>Address</label>
-          <textarea class="address" type="textarea" name="address" class="form-control" [(ngModel)]="model.address" required></textarea>
-        </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="form-group p-3">
-            <label>Fax</label>
-            <input type="text" name="fax" [(ngModel)]="model.fax" class="form-control" required>
-          </div>
-        </div>
-
-       
-      
-        </div>
       <a class="form-group" (click)="openDialog()">
         Login
       </a>

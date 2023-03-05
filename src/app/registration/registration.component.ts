@@ -11,11 +11,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 declare var window:any;
 
 
-
 export class User {
   public id!:number;
-  public fName!: string;
-  public lName!: string;
+  public firstName!: string;
+  public lastName!: string;
   public email!: string;
   public password!: string;
   public address!: string;
@@ -23,9 +22,9 @@ export class User {
   public state!: string;
   public postalCode!:string;
   public phone!:string;
-  public fax!:string;
-  public faxNumber!:string;
   public status!:boolean;
+  public country!:string;
+  public dateOfBirth!:string;
 }
 declare var $:any;
 
@@ -62,8 +61,8 @@ export class RegistrationComponent {
   onSubmit(data : any) {
     console.log(data.value);
     this.model.id = 0;
-    this.model.fName = data.value.firstName;
-    this.model.lName = data.value.lastName;
+    this.model.firstName = data.value.firstName;
+    this.model.lastName = data.value.lastName;
     this.model.email = data.value.email;
     this.model.password = data.value.password;
     this.model.address = data.value.address;
@@ -71,9 +70,11 @@ export class RegistrationComponent {
     this.model.state = data.value.state;
     this.model.postalCode = data.value.postalCode;
     this.model.phone = data.value.phone;
-    this.model.fax = data.value.fax;
-    this.model.faxNumber = data.value.faxNumber;
+     this.model.dateOfBirth =  data.value.dateOfBirth.month +"/"+ data.value.dateOfBirth.day + "/" + data.value.dateOfBirth.year;
+     this.model.country = "";
     this.model.status = true;
+
+  
 
     const headers = { 'content-type': 'application/json'};
     
