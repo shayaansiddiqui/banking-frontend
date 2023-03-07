@@ -13,12 +13,12 @@ export class RegistrationService {
       lastName:['',Validators.required],
       email:['',Validators.required],
       password:['',Validators.required],
-      address:[''],
-      city:[''],
-      state:[''],
-      postalCode:[''],
-      phone:[''],
-      dateOfBirth:['']
+      address:['',Validators.required],
+      city:['',Validators.required],
+      state:['',Validators.required],
+      postalCode:['',Validators.required],
+      phone:['',Validators.required],
+      dateOfBirth:['',Validators.required]
   })
    }
 }

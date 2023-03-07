@@ -10,6 +10,7 @@ import { NgClass } from '@angular/common';
 import { AppRoutingModule } from "./app-routing.module";
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule, HttpHeaders  } from '@angular/common/http';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule, HttpHeaders  } from '@angular/common/http';
     AppRoutingModule,
     MatDialogModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

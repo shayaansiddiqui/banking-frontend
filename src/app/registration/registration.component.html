@@ -1,11 +1,24 @@
 <div class="container">
-    <div><h2 class="text-center m-3 p-3x"> Registration Form </h2></div>
+    <div><h2 class="text-center m-3 p-3x"> Open Account </h2></div>
 <div class="centerRegistrationForm mt-5 mr-5 ">
   <!-- animate__animated animate__zoomInDown  -->
 <div class="card">
     <div class="card-body p-4">
 <form [formGroup]="service.registrationForm" (ngSubmit)="onSubmit()" [class.submitted]="submitted">
-
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group p-3">
+        <label>First Name</label>
+        <input name="firstName" formControlName="firstName" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-6">  
+      <div class="form-group p-3">
+        <label>Last Name</label>
+        <input name="lastName" formControlName="lastName" class="form-control">
+      </div>
+    </div>
+  </div>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group p-3">
@@ -13,9 +26,6 @@
                 <input type="email" class="form-control" formControlName="email" name="email">
               </div>
         </div>
-       
-
-        
         <div class="col-md-6">
             <div class="form-group p-3">
                 <label>Password</label>
@@ -23,103 +33,72 @@
               </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-     
-        <div class="form-group p-3">
-          <label>First Name</label>
-          <input name="firstName" formControlName="firstName" class="form-control">
-        </div>
-      </div>
-        <div class="col-md-6">
-            
-          <div class="form-group p-3">
-            <label>Last Name</label>
-            <input name="lastName" formControlName="lastName" class="form-control">
-          </div>
-        </div>
-        </div>
   <div class="row">
-        <div class="col-md-6">
-          <div class="form-group p-3">
-            <label>State</label>
-            <select class="form-control" name="state" id="state" formControlName="state">
-              <option value="" disabled selected>Select State</option>
-              <option *ngFor="let state of State" [value]="state">{{state}}</option>
-          </select> 
-          </div>
-      
-        </div>
-        <div class="col-md-6">
-          <div class="form-group p-3">
-            <label>City</label>
-           <select class="form-control" name="city" id="city" formControlName="state">
-
-              <option value="" disabled selected>Select City</option>
-              <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
-         </select> 
-          </div>
-
-
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-          <div class="form-group p-3">
-              <label>Date Of Birth</label>
-              <div class="ro">
-              
-              <input name="dateOfBirth" formControlName="dateOfBirth" class="form-control" ngbDatepicker #d="ngbDatepicker"/>
-            
-              <button (click)="d.toggle()"><i class="fa fa-calendar" aria-hidden="true" ></i> </button>
-      </div></div>
-      </div>
-      
     <div class="col-md-6">
       <div class="form-group p-3">
-        <label>Postal Code</label>
-        <input name="postalCode" class="form-control" formControlName="postalCode">
+          <label>Date Of Birth</label>
+            <input type="text" [bsConfig]="datepickerConfig" class="form-control calender" bsDatepicker>
+          <!-- <input name="dateOfBirth" formControlName="dateOfBirth" class="form-control" ngbDatepicker #d="ngbDatepicker"/>
+        
+          <button (click)="d.toggle()"><i class="fa fa-calendar" aria-hidden="true" ></i> </button> -->
+        </div>
       </div>
-    </div>
-    </div>
-   
-  
-    <div class="row">
-        <div class="col-md-6">
-          
-        </div>
-      
-        </div>
-      <div class="row">
-   
         <div class="col-md-6 mb-4">
           <div class="form-group p-3">
             <label>Phone</label>
-          </div> 
-          <input formControlName="phone" name="phone" class="form-control">
+           
+          <input type="password" formControlName="phone" name="phone" class="form-control">
           </div>
-          
+          </div>
+        </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group p-3">
+        <label>State</label>
+        <select class="form-control" name="state" id="state" formControlName="state">
+          <option value="" disabled selected>Select State</option>
+          <option *ngFor="let state of State" [value]="state">{{state}}</option>
+      </select> 
+      </div>
+    </div> 
+      <div class="col-md-6">
+        <div class="form-group p-3">
+          <label>City</label>
+        <select class="form-control" name="city" id="city" formControlName="city">
+
+            <option value="" disabled selected>Select City</option>
+            <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
+      </select> 
+        </div>
+      </div>
+    </div> 
+    <div class="row">
+       
+            <div class="col-md-6">
+            <div class="form-group p-3">
+            <label>Postal Code</label>
+            <input name="postalCode" class="form-control" formControlName="postalCode">
+            </div>
+            </div>
+
             <div class="col-md-6 mb-4">
               <div class="form-group p-3">
                 <label>Address</label>
                 <textarea class="address" type="textarea" formControlName="address" name="address" class="form-control"></textarea>
               </div>
               </div>
+          <a class="form-group" (click)="openDialog()">
+            Login
+          </a>
       </div>
-      <a class="form-group" (click)="openDialog()">
-        Login
-      </a>
-    <div class="form-group text-center">
-      <button class="btn btn-block submit">Submit</button>
-    </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-block submit">Submit</button>
+      </div>
 </form>
 </div>
 </div>
-
 </div>
 </div>
-
-
 <div>
 <ng-template #content let-modal>
 	<div class="modal-header">

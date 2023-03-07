@@ -8,6 +8,7 @@ import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/ht
 import { Registration } from '../shared/registration';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from '../shared/registration.service';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 declare var window:any;
 
@@ -23,6 +24,7 @@ declare var $:any;
 })
 export class RegistrationComponent {
   baseUrl = "https://localhost:7235/api/BankCustomer";
+  datepickerConfig: Partial<BsDatepickerConfig>;
  submitted : boolean = false;
 
    State: string[] = [
@@ -39,8 +41,8 @@ export class RegistrationComponent {
   formModal : any;
   isShow = false;
   
-  constructor(public service:RegistrationService, private modalService: NgbModal,private router: Router, private activeRouter : ActivatedRoute, private dialog: MatDialog, private http: HttpClient, private formBuilder: FormBuilder) {
-  
+  constructor(public service:RegistrationService, private modalService: NgbModal,private router: Router, private activeRouter : ActivatedRoute, private dialog: MatDialog, private http: HttpClient, private formBuilder: FormBuilder,BsDatepickerConfig: BsDatepickerConfig) {
+    this.datepickerConfig = Object.assign({},{containerClass:'theme-dark-blue'})
   }
 
   onSubmit() {
