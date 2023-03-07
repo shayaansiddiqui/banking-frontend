@@ -1,6 +1,7 @@
 import { animate, animation, style,state, transition, trigger, query, group } from '@angular/animations';
 import { Component } from '@angular/core'
 import { RouterOutlet, ChildrenOutletContexts} from "@angular/router";
+
 //import { slider, transformer, fader, stepper} from '@angular/animations';
 
 
@@ -48,6 +49,9 @@ export class AppComponent {
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
+
+
+  
 }
 
 

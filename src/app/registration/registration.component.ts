@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbAlert, NgbModal,NgbToast } from '@ng-bootstrap/ng-bootstrap';
 import { animate,trigger,transition,style, state } from "@angular/animations";
 import { ActivatedRoute, Router  } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
-import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
 import { Registration } from '../shared/registration';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from '../shared/registration.service';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { ToastService } from "../shared/toast.service";
 
 declare var window:any;
 
@@ -41,38 +41,23 @@ export class RegistrationComponent {
   formModal : any;
   isShow = false;
   
-  constructor(public service:RegistrationService, private modalService: NgbModal,private router: Router, private activeRouter : ActivatedRoute, private dialog: MatDialog, private http: HttpClient, private formBuilder: FormBuilder,BsDatepickerConfig: BsDatepickerConfig) {
+  constructor(public service:RegistrationService, private modalService: NgbModal,private router: Router, private activeRouter : ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService:ToastService) {
     this.datepickerConfig = Object.assign({},{containerClass:'theme-dark-blue'})
   }
 
   onSubmit() {
+    this.showSuccess();
     this.submitted = true;
     console.log(this.service.registrationForm.value);
-    if (this.service.registrationForm.valid) {
-      const headers = { 'content-type': 'application/json'};
-        this.http.post(this.baseUrl, this.service.registrationForm.value, {headers}).subscribe(result => {
-        console.warn("result",result);
-        
-      }),(err:HttpErrorResponse)=>{"handle your error here"}
-    }
-    
-    // this.model.id = 0;
-    // this.model.firstName = data.value.firstName;
-    // this.model.lastName = data.value.lastName;
-    // this.model.email = data.value.email;
-    // this.model.password = data.value.password;
-    // this.model.address = data.value.address;
-    // this.model.city = data.value.city;
-    // this.model.state = data.value.state;
-    // this.model.postalCode = data.value.postalCode;
-    // this.model.phone = data.value.phone;
-    //  this.model.dateOfBirth =  data.value.dateOfBirth.month +"/"+ data.value.dateOfBirth.day + "/" + data.value.dateOfBirth.year;
-    //  this.model.country = "";
-    // this.model.status = true;
-
   
-
-    
+    if (this.service.registrationForm.valid) {
+   
+      this.service.registerUser().subscribe(res =>{
+        console.log('got response !');
+        console.log(res);
+      // toast messages
+      });
+    }
   }
   
   showModal(element?:any) {
@@ -87,11 +72,49 @@ export class RegistrationComponent {
     openDialog(){
      this.dialog.open(LoginComponent);
    }
-//    register(user:any){
-//     return this.http.post(this.baseUrl +'registration',user);
-//  }
+
  ngOnInit() {
  
+}
+
+resetForm()
+{
+  this.service.registrationForm.reset(new Registration());
+  this.submitted = false;
+}
+
+showStandard() {
+ 
+  this.toastService.show('I am a standard toast', {
+    delay: 2000,
+    autohide: true
+  });
+}
+
+showSuccess() {
+  this.toastService.show('I am a success toast', {
+    classname: 'bg-success text-light ',
+    delay: 2000 ,
+    autohide: true,
+    headertext: 'Toast Header'
+  });
+}
+showError() {
+  this.toastService.show('I am a success toast', {
+    classname: 'bg-danger text-light',
+    delay: 2000 ,
+    autohide: true,
+    headertext: 'Error!!!'
+  });
+
+}
+
+showCustomToast(customTpl :any) {
+this.toastService.show(customTpl, {
+  classname: 'bg-info text-light',
+  delay: 3000,
+  autohide: true
+});
 }
 
 }

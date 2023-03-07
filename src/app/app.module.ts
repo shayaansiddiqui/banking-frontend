@@ -10,13 +10,15 @@ import { NgClass } from '@angular/common';
 import { AppRoutingModule } from "./app-routing.module";
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule, HttpHeaders  } from '@angular/common/http';
+import { ToastComponent } from './toast/toast.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ToastComponent
     ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BsDatepickerModule
+    BsDatepickerModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

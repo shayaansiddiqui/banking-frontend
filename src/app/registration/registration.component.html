@@ -1,3 +1,5 @@
+<app-toasts style="float: right;"></app-toasts>
+
 <div class="container">
     <div><h2 class="text-center m-3 p-3x"> Open Account </h2></div>
 <div class="centerRegistrationForm mt-5 mr-5 ">
@@ -21,7 +23,7 @@
   </div>
     <div class="row">
         <div class="col-md-6">
-            <div class="form-group p-3">
+            <div class="form-group p-3"> 
                 <label>Email</label>
                 <input type="email" class="form-control" formControlName="email" name="email">
               </div>
@@ -37,7 +39,7 @@
     <div class="col-md-6">
       <div class="form-group p-3">
           <label>Date Of Birth</label>
-            <input type="text" [bsConfig]="datepickerConfig" class="form-control calender" bsDatepicker>
+          <input type="text" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker name="dateOfBirth" formControlName="dateOfBirth">
           <!-- <input name="dateOfBirth" formControlName="dateOfBirth" class="form-control" ngbDatepicker #d="ngbDatepicker"/>
         
           <button (click)="d.toggle()"><i class="fa fa-calendar" aria-hidden="true" ></i> </button> -->
