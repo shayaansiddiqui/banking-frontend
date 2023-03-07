@@ -4,21 +4,22 @@
   <!-- animate__animated animate__zoomInDown  -->
 <div class="card">
     <div class="card-body p-4">
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+<form [formGroup]="service.registrationForm" (ngSubmit)="onSubmit()" [class.submitted]="submitted">
 
     <div class="row">
         <div class="col-md-6">
             <div class="form-group p-3">
                 <label>Email</label>
-                <input type="email" class="form-control" [(ngModel)]="model.email" name="email"  required FormControl="email">
+                <input type="email" class="form-control" formControlName="email" name="email">
               </div>
         </div>
-        <input type="hidden" class="form-control" [(ngModel)]="model.id" name="id"  required>
+       
+
         
         <div class="col-md-6">
             <div class="form-group p-3">
                 <label>Password</label>
-                <input type="password" class="form-control"  name="password"  required [(ngModel)]="model.password">
+                <input type="password" class="form-control" formControlName="password" name="password">
               </div>
         </div>
     </div>
@@ -27,14 +28,14 @@
      
         <div class="form-group p-3">
           <label>First Name</label>
-          <input type="text" name="firstName" [(ngModel)]="model.firstName" class="form-control"  required>
+          <input name="firstName" formControlName="firstName" class="form-control">
         </div>
       </div>
         <div class="col-md-6">
             
           <div class="form-group p-3">
             <label>Last Name</label>
-            <input type="text" name="lastName" [(ngModel)]="model.lastName" class="form-control" required>
+            <input name="lastName" formControlName="lastName" class="form-control">
           </div>
         </div>
         </div>
@@ -42,7 +43,7 @@
         <div class="col-md-6">
           <div class="form-group p-3">
             <label>State</label>
-            <select class="form-control" name="state" id="state" [(ngModel)]="model.state">
+            <select class="form-control" name="state" id="state" formControlName="state">
               <option value="" disabled selected>Select State</option>
               <option *ngFor="let state of State" [value]="state">{{state}}</option>
           </select> 
@@ -52,7 +53,7 @@
         <div class="col-md-6">
           <div class="form-group p-3">
             <label>City</label>
-           <select class="form-control" name="city" id="city" [(ngModel)]="model.city">
+           <select class="form-control" name="city" id="city" formControlName="state">
 
               <option value="" disabled selected>Select City</option>
               <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
@@ -68,7 +69,7 @@
               <label>Date Of Birth</label>
               <div class="ro">
               
-              <input type="text" name="dateOfBirth" ngModel class="form-control" ngbDatepicker #d="ngbDatepicker"/>
+              <input name="dateOfBirth" formControlName="dateOfBirth" class="form-control" ngbDatepicker #d="ngbDatepicker"/>
             
               <button (click)="d.toggle()"><i class="fa fa-calendar" aria-hidden="true" ></i> </button>
       </div></div>
@@ -77,7 +78,7 @@
     <div class="col-md-6">
       <div class="form-group p-3">
         <label>Postal Code</label>
-        <input type="text" name="postalCode" class="form-control" [(ngModel)]="model.postalCode" required>
+        <input name="postalCode" class="form-control" formControlName="postalCode">
       </div>
     </div>
     </div>
@@ -94,13 +95,14 @@
         <div class="col-md-6 mb-4">
           <div class="form-group p-3">
             <label>Phone</label>
-            <input type="text" name="phone" [(ngModel)]="model.phone" class="form-control" required>
+          </div> 
+          <input formControlName="phone" name="phone" class="form-control">
           </div>
-            </div>
+          
             <div class="col-md-6 mb-4">
               <div class="form-group p-3">
                 <label>Address</label>
-                <textarea class="address" type="textarea" name="address" class="form-control" [(ngModel)]="model.address" required></textarea>
+                <textarea class="address" type="textarea" formControlName="address" name="address" class="form-control"></textarea>
               </div>
               </div>
       </div>
