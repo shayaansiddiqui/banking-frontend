@@ -1,151 +1,131 @@
+<app-toasts style="float: right;"></app-toasts>
+
 <div class="container">
-  <div><h2 class="text-center m-3 p-3x"> Registration Form </h2></div>
-  <div class="centerRegistrationForm mt-5 mr-5 ">
-    <!-- animate__animated animate__zoomInDown  -->
-    <div class="card">
-      <div class="card-body p-4">
-        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group p-3">
+    <div><h2 class="text-center m-3 p-3x"> Open Account </h2></div>
+<div class="centerRegistrationForm mt-5 mr-5 ">
+  <!-- animate__animated animate__zoomInDown  -->
+<div class="card">
+    <div class="card-body p-4">
+<form [formGroup]="service.registrationForm" (ngSubmit)="onSubmit()" [class.submitted]="submitted">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group p-3">
+        <label>First Name</label>
+        <input name="firstName" formControlName="firstName" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-6">  
+      <div class="form-group p-3">
+        <label>Last Name</label>
+        <input name="lastName" formControlName="lastName" class="form-control">
+      </div>
+    </div>
+  </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group p-3"> 
                 <label>Email</label>
-                <input type="email" class="form-control" [(ngModel)]="model.email" name="email" required
-                       FormControl="email">
+                <input type="email" class="form-control" formControlName="email" name="email">
               </div>
-            </div>
-            <input type="hidden" class="form-control" [(ngModel)]="model.id" name="id" required>
-
-            <div class="col-md-6">
-              <div class="form-group p-3">
+        </div>
+        <div class="col-md-6">
+            <div class="form-group p-3">
                 <label>Password</label>
-                <input type="password" class="form-control" name="password" required [(ngModel)]="model.password">
+                <input type="password" class="form-control" formControlName="password" name="password">
               </div>
-            </div>
+        </div>
+    </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group p-3">
+          <label>Date Of Birth</label>
+          <input type="text" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker name="dateOfBirth" formControlName="dateOfBirth">
+          <!-- <input name="dateOfBirth" formControlName="dateOfBirth" class="form-control" ngbDatepicker #d="ngbDatepicker"/>
+        
+          <button (click)="d.toggle()"><i class="fa fa-calendar" aria-hidden="true" ></i> </button> -->
+        </div>
+      </div>
+        <div class="col-md-6 mb-4">
+          <div class="form-group p-3">
+            <label>Phone</label>
+           
+          <input type="password" formControlName="phone" name="phone" class="form-control">
           </div>
-          <div class="row">
-            <div class="col-md-6">
-
-              <div class="form-group p-3">
-                <label>First Name</label>
-                <input type="text" name="firstName" [(ngModel)]="model.firstName" class="form-control" required>
-              </div>
-            </div>
-            <div class="col-md-6">
-
-              <div class="form-group p-3">
-                <label>Last Name</label>
-                <input type="text" name="lastName" [(ngModel)]="model.lastName" class="form-control" required>
-              </div>
-            </div>
           </div>
-          <div class="row">
+        </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group p-3">
+        <label>State</label>
+        <select class="form-control" name="state" id="state" formControlName="state">
+          <option value="" disabled selected>Select State</option>
+          <option *ngFor="let state of State" [value]="state">{{state}}</option>
+      </select> 
+      </div>
+    </div> 
+      <div class="col-md-6">
+        <div class="form-group p-3">
+          <label>City</label>
+        <select class="form-control" name="city" id="city" formControlName="city">
+
+            <option value="" disabled selected>Select City</option>
+            <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
+      </select> 
+        </div>
+      </div>
+    </div> 
+    <div class="row">
+       
             <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>State</label>
-                <select class="form-control" name="state" id="state" [(ngModel)]="model.state">
-                  <option value="" disabled selected>Select State</option>
-                  <option *ngFor="let state of State" [value]="state">{{state}}</option>
-                </select>
-              </div>
-
+            <div class="form-group p-3">
+            <label>Postal Code</label>
+            <input name="postalCode" class="form-control" formControlName="postalCode">
             </div>
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>City</label>
-                <select class="form-control" name="city" id="city" [(ngModel)]="model.city">
-
-                  <option value="" disabled selected>Select City</option>
-                  <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
-                </select>
-              </div>
-
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Date Of Birth</label>
-                <div class="ro">
-
-                  <input type="text" name="dateOfBirth" ngModel class="form-control" ngbDatepicker #d="ngbDatepicker"/>
-
-                  <button (click)="d.toggle()"><i class="fa fa-calendar" aria-hidden="true"></i></button>
-                </div>
-              </div>
             </div>
 
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Postal Code</label>
-                <input type="text" name="postalCode" class="form-control" [(ngModel)]="model.postalCode" required>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="row">
-            <div class="col-md-6">
-
-            </div>
-
-          </div>
-          <div class="row">
-
-            <div class="col-md-6 mb-4">
-              <div class="form-group p-3">
-                <label>Phone</label>
-                <input type="text" name="phone" [(ngModel)]="model.phone" class="form-control" required>
-              </div>
-            </div>
             <div class="col-md-6 mb-4">
               <div class="form-group p-3">
                 <label>Address</label>
-                <textarea class="address" type="textarea" name="address" class="form-control"
-                          [(ngModel)]="model.address" required></textarea>
+                <textarea class="address" type="textarea" formControlName="address" name="address" class="form-control"></textarea>
               </div>
-            </div>
-          </div>
+              </div>
           <a class="form-group" (click)="openDialog()">
             Login
           </a>
-          <div class="form-group text-center">
-            <button class="btn btn-block submit">Submit</button>
-          </div>
-        </form>
       </div>
-    </div>
-
-  </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-block submit">Submit</button>
+      </div>
+</form>
 </div>
-
-
+</div>
+</div>
+</div>
 <div>
-  <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+<ng-template #content let-modal>
+	<div class="modal-header">
+		  <h4 class="modal-title w-100 font-weight-bold">Login</h4>
       <button type="button" class="btn btn-light" (click)="modal.close('Close click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="md-form mb-5">
-        <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
-        <input type="email" id="defaultForm-email" class="form-control validate">
-        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
-      </div>
-      <div class="md-form mb-5">
-        <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
-        <input type="password" id="defaultForm-pass" class="form-control validate">
-        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-    </div>
-
-  </ng-template>
+          <span aria-hidden="true">&times;</span>
+        </button>
+  </div>
+	<div class="modal-body">
+		   <div class="md-form mb-5">
+          <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+        </div>
+        <div class="md-form mb-5">
+          <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
+          <input type="password" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+ 
+</ng-template>
 </div>
 <!-- Login Modal Code end -->
 
