@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegistrationService {
-  registrationForm : any;
-  constructor(private fb : FormBuilder) {
-  this.registrationForm = this.fb.group({
+  
+    readonly baseUrl = "https://localhost:7235/api/BankCustomer";
+
+  constructor(private fb : FormBuilder,private http : HttpClient) { }
+  registrationForm = this.fb.group({
       id:[0],
       firstName:['',Validators.required],
       lastName:['',Validators.required],
@@ -16,9 +20,32 @@ export class RegistrationService {
       address:[''],
       city:[''],
       state:[''],
-      postalCode:[''],
-      phone:[''],
-      dateOfBirth:['']
+      postalCode:['',Validators.required],
+      phone:['',Validators.required],
+      dateOfBirth:['',Validators.required]
   })
-   }
+
+registerUser()
+{
+  const headers = { 'content-type': 'application/json'};
+ return this.http.post(this.baseUrl,this.registrationForm.value, {headers})
+  {
+
+  }
+}
+
+private handleError(error: HttpErrorResponse) {
+  if (error.status === 0) {
+    // A client-side or network error occurred. Handle it accordingly.
+    console.error('An error occurred:', error.error);
+  } else {
+    // The backend returned an unsuccessful response code.
+    // The response body may contain clues as to what went wrong.
+    console.error(
+      `Backend returned code ${error.status}, body was: `, error.error);
+  }
+  // Return an observable with a user-facing error message.
+  return throwError(() => new Error('Something bad happened; please try again later.'));
+}
+   
 }
