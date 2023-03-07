@@ -1,28 +1,31 @@
-.centerRegistrationForm
-{
-    padding-right: 10%;
-    padding-left: 10%;
-}
-.ro{
-    display:flex;
+.centerRegistrationForm {
+  padding-right: 10%;
+  padding-left: 10%;
 }
 
-.modal .show{
-    display: block;
+.ro {
+  display: flex;
+}
+
+.modal .show {
+  display: block;
 }
 
 
 .dark-modal .modal-content {
-    background-color: #292b2c;
-    color: white;
+  background-color: #292b2c;
+  color: white;
 }
+
 .dark-modal .close {
-    color: white;
+  color: white;
 }
+
 .light-blue-backdrop {
-    background-color: #b3bac0;
+  background-color: #b3bac0;
 }
-.submit{
-    color: white;
-    background-color: #202A44;
+
+.submit {
+  color: white;
+  background-color: #202A44;
 }

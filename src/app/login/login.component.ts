@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { HttpClientModule } from '@angular/common/http';
+import {Component} from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {HttpClientModule} from '@angular/common/http';
 
 
 export class User {
- 
   public email!: string;
   public password!: string;
-  
 }
 
 @Component({
@@ -17,16 +15,15 @@ export class User {
 })
 export class LoginComponent {
   model = new User();
- 
-  constructor(private dialog: MatDialog, public HttpClientModule: HttpClientModule) {
-   
 
+  constructor(private dialog: MatDialog, public HttpClientModule: HttpClientModule) {
   }
+
   onSubmit(form: any) {
     console.log(form.value);
   }
-  openDialog(){
+
+  openDialog() {
     this.dialog.open(LoginComponent);
   }
-
 }
