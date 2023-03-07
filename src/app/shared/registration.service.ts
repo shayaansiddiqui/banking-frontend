@@ -21,18 +21,30 @@ export class RegistrationService {
       state:['',Validators.required],
       postalCode:['',Validators.required],
       phone:['',Validators.required],
-      dateOfBirth:['',Validators.required]
+      dateOfBirth:['',Validators.required],
+      address : ['']
   })
    
 
 registerUser()
 {
-  const headers = { 'content-type': 'application/json'};
- return this.http.post(this.baseUrl,this.registrationForm.value, {headers})
-  {
+      const headers = { 'content-type': 'application/json'};
+      // console.log("Register User");
+    this.http.post(this.baseUrl, this.registrationForm.value, {headers}).subscribe(result => 
+      console.log("Testing "), err => {
+        console.error(err);
+        this.handleError(err);
+    });
+      // if (!result.error) {
+      //   {
+      //     this.showSuccess();    
+      //   }
+      //   else {
+      //     this.showError();
+      //   }
+      // }
+};
 
-  }
-}
 
 private handleError(error: HttpErrorResponse) {
   if (error.status === 0) {
@@ -49,3 +61,6 @@ private handleError(error: HttpErrorResponse) {
 }
    
 }
+
+
+

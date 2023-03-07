@@ -48,15 +48,13 @@ export class RegistrationComponent {
   onSubmit() {
     this.showSuccess();
     this.submitted = true;
-    console.log(this.service.registrationForm.value);
+   // console.log(this.service.registrationForm.value);
   
     if (this.service.registrationForm.valid) {
    
-      this.service.registerUser().subscribe(res =>{
-        console.log('got response !');
-        console.log(res);
-      // toast messages
-      });
+      this.service.registerUser();
+      this.showSuccess();
+
     }
   }
   
@@ -92,7 +90,7 @@ showStandard() {
 }
 
 showSuccess() {
-  this.toastService.show('I am a success toast', {
+  this.toastService.show('Successfully !, Your account is Registered', {
     classname: 'bg-success text-light ',
     delay: 2000 ,
     autohide: true,
