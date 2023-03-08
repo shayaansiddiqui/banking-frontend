@@ -1,11 +1,10 @@
-// toast.service.ts
-import { Injectable, TemplateRef  } from '@angular/core';
+import {Injectable, TemplateRef} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToastService {
-
+  constructor() { }
   toasts: any[] = [];
 
   // Push new Toasts to array with content and options
