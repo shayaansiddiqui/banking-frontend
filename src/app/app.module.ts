@@ -12,13 +12,15 @@ import { ToastComponent } from './toast/toast.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {LoginComponent} from "./pages/login/login.component";
 import {RegistrationComponent} from "./pages/registration/registration.component";
+import { LandingComponent } from './pages/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    ToastComponent
+    ToastComponent,
+    LandingComponent
     ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators,FormGroup, FormControl} from '@angular/forms';
 import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
 import { throwError } from 'rxjs';
 
@@ -13,14 +13,14 @@ export class RegistrationService {
   constructor(private fb : FormBuilder,private http : HttpClient) { }
   registrationForm = this.fb.group({
       id:[0],
-      firstName:['',Validators.required],
-      lastName:['',Validators.required],
-      email:['',Validators.required],
-      password:['',Validators.required],
+      firstName:['',[Validators.required,Validators.maxLength(10)]],
+      lastName:[''],
+      email:['',[Validators.required]],
+      password:['',[Validators.required,Validators.minLength(6)]],
       city:['',Validators.required],
       state:['',Validators.required],
       postalCode:['',Validators.required],
-      phone:['',Validators.required],
+      phone:['',[Validators.required,Validators.minLength(10)]],
       dateOfBirth:['',Validators.required],
       address : ['']
   })
@@ -59,7 +59,8 @@ private handleError(error: HttpErrorResponse) {
   // Return an observable with a user-facing error message.
   return throwError(() => new Error('Something bad happened; please try again later.'));
 }
-   
+
+
 }
 
 

@@ -4,10 +4,12 @@ import {RegistrationService} from "../../shared/registration.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder,FormControl} from "@angular/forms";
 import {ToastService} from "../../services/toast.service";
 import {LoginComponent} from "../login/login.component";
 import {Registration} from "../../shared/registration";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-registration',
@@ -16,6 +18,9 @@ import {Registration} from "../../shared/registration";
 })
 export class RegistrationComponent {
   baseUrl = "https://localhost:7235/api/BankCustomer";
+
+  bsValue = new Date();
+
   datepickerConfig: Partial<BsDatepickerConfig>;
   submitted: boolean = false;
 
@@ -32,21 +37,31 @@ export class RegistrationComponent {
   ];
   formModal: any;
   isShow = false;
+  FormControl: any;
+
 
   constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService) {
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
+  
+ 
+  
+    this.bsValue.setFullYear(this.bsValue.getFullYear() - 20);
+    console.log(this.bsValue);
   }
 
   onSubmit() {
     this.showSuccess();
     this.submitted = true;
     // console.log(this.service.registrationForm.value);
-
+alert("onSubmit");
     if (this.service.registrationForm.valid) {
-
-      this.service.registerUser();
+      alert("registrationForm");
+      //this.service.registerUser();
       this.showSuccess();
 
+    }
+    else{
+      this.showError();
     }
   }
 
@@ -106,4 +121,5 @@ export class RegistrationComponent {
       autohide: true
     });
   }
+ 
 }
