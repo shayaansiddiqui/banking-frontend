@@ -58,19 +58,21 @@
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Address</label>
-                <textarea type="textarea" formControlName="address" name="address"
+                <textarea type="textarea" #address (input)="GetAddressSugestions(address.value)" formControlName="address" id="address" name="address"
                           class="form-control address"></textarea>
+                          <div class="autocomplete">
+                            <ul>
+                              <li class="autocomplete-items"  *ngFor="let suggestion of apiModel; index as i;" (click)="Setfields(suggestion.city);">{{suggestion.street}}</li>
+                            </ul>  
+                          </div>
+                          
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>City</label>
-                <input class="form-control" type="text" name="city">
-                <!-- <select class="form-control" name="city" id="city" formControlName="city">
+                <input class="form-control" id="city" type="text" name="city">
 
-                  <option value="" disabled selected>Select City</option>
-                  <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
-                </select> -->
               </div>
             </div>
           </div>
@@ -78,16 +80,13 @@
             <div class="col-md-6 mb-4">
               <div class="form-group p-3">
                 <label>State</label>
-                <select class="form-control" name="state" id="state" formControlName="state">
-                  <option value="" disabled selected>Select State</option>
-                  <option *ngFor="let state of State" [value]="state">{{state}}</option>
-                </select> -->
+                                <input class="form-control" type="text" id="state" name="city">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Zip Code</label>
-                <input type="number" required maxlength="6" name="postalCode" class="form-control" formControlName="postalCode">
+                <input type="number" id="postcode" required maxlength="6" name="postalCode" class="form-control" formControlName="postalCode">
               </div>
             </div>
            
@@ -110,12 +109,11 @@
     </div>
     <div class="modal-body">
       <div class="md-form mb-5">
-        <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
+  
         <input type="email" id="defaultForm-email" class="form-control validate">
         <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
       </div>
       <div class="md-form mb-5">
-        <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
         <input type="password" id="defaultForm-pass" class="form-control validate">
         <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
       </div>

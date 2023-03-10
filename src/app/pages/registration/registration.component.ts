@@ -11,6 +11,7 @@ import {Registration} from "../../shared/registration";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddressApiDto } from "../../model/AddressApiDto";
 import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 
@@ -20,6 +21,7 @@ import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/ht
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+  
   apiModel : AddressApiDto[] = [];
   JsnObje : any = {};
   baseUrl = "https://localhost:7235/api/BankCustomer";
@@ -42,7 +44,7 @@ export class RegistrationComponent {
   isShow = false;
   FormControl: any;
 
-  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient) {
+  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule) {
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
   
  
@@ -54,7 +56,7 @@ export class RegistrationComponent {
   onSubmit() {
     this.showSuccess();
     this.submitted = true;
-    // console.log(this.service.registrationForm.value);
+     console.log(this.service.registrationForm.value);
     alert("onSubmit");
     if (this.service.registrationForm.valid) {
       alert("registrationForm");
@@ -74,35 +76,23 @@ export class RegistrationComponent {
   {
     this.apiModel = [];  
       if (search.length > 2) {
-        
-  //       fetch("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&type=street&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f")
-  // .then(response => response.json())
-  // .then(
-  //   result => 
-  //   console.log(result.results)
-  //this.apiModel.map(result => result.results.)
-  //this.res = response.map(results => results.street);
 
   const headers = { 'content-type': 'application/json'};
-  // console.log("Register User");
-this.HttpClient.get("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&type=street&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f", {headers}).subscribe(data => {
- this.JsnObje  = data;
+   //console.log("Register User");
+    this.HttpClient.get("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&type=street&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f", {headers}).subscribe(data => {
+    this.JsnObje  = data;
+    
 for(let i of this.JsnObje.results)
 {
   this.apiModel.push(i); 
-  console.log(i.city);
+  console.log(i);
 }
-
-
-
 });
 }
-  //)
- // .catch(error => console.log('error', error));
-      //}
-    //  console.log(this.apiModel);
+  }
+
+  selectEvent() {
     
- 
   }
 
   openWindowCustomClass(content: any) {
@@ -129,6 +119,12 @@ for(let i of this.JsnObje.results)
   resetForm() {
     this.service.registrationForm.reset(new Registration());
     this.submitted = false;
+  }
+
+  Setfields(city:string)
+  {
+    console.log(city);
+    this.service.registrationForm.controls['city'].setValue(city);
   }
 
   showStandard() {

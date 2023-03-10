@@ -12,7 +12,7 @@ export class CustomerService {
    * Private Variables
    * url          - URL To API Service
    */
-  url = environment.baseUrl + "Customer/";
+  url = "Customer/";
 
   constructor(private httpClient: HttpClient) {
   }

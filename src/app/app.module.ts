@@ -14,6 +14,7 @@ import {LoginComponent} from "./pages/login/login.component";
 import {RegistrationComponent} from "./pages/registration/registration.component";
 import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './pages/header/header.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HeaderComponent } from './pages/header/header.component';
     HttpClientModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
+    MatAutocompleteModule
 
   ],
   providers: [],

@@ -18,6 +18,7 @@ export class RegistrationService {
       password:['',[Validators.required,Validators.minLength(6),Validators.pattern('[- +()0-9]+')]],
       city:['',Validators.required],
       state:['',Validators.required],
+      dateOfBirth:['',Validators.required],
       postalCode:['',[Validators.required,Validators.minLength(6)]],
       phone:[0,[Validators.required,Validators.minLength(10)]],
       address : ['',]
