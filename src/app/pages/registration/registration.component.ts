@@ -9,6 +9,9 @@ import {ToastService} from "../../services/toast.service";
 import {LoginComponent} from "../login/login.component";
 import {Registration} from "../../shared/registration";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddressApiDto } from "../../model/AddressApiDto";
+import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
+
 
 
 @Component({
@@ -17,10 +20,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+  apiModel : AddressApiDto[] = [];
+  JsnObje : any = {};
   baseUrl = "https://localhost:7235/api/BankCustomer";
-
   bsValue = new Date();
-
   datepickerConfig: Partial<BsDatepickerConfig>;
   submitted: boolean = false;
 
@@ -39,8 +42,7 @@ export class RegistrationComponent {
   isShow = false;
   FormControl: any;
 
-
-  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService) {
+  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient) {
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
   
  
@@ -53,7 +55,7 @@ export class RegistrationComponent {
     this.showSuccess();
     this.submitted = true;
     // console.log(this.service.registrationForm.value);
-alert("onSubmit");
+    alert("onSubmit");
     if (this.service.registrationForm.valid) {
       alert("registrationForm");
       //this.service.registerUser();
@@ -68,14 +70,56 @@ alert("onSubmit");
   showModal(element?: any) {
   }
 
+  GetAddressSugestions(search :any)
+  {
+    this.apiModel = [];  
+      if (search.length > 2) {
+        
+  //       fetch("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&type=street&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f")
+  // .then(response => response.json())
+  // .then(
+  //   result => 
+  //   console.log(result.results)
+  //this.apiModel.map(result => result.results.)
+  //this.res = response.map(results => results.street);
+
+  const headers = { 'content-type': 'application/json'};
+  // console.log("Register User");
+this.HttpClient.get("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&type=street&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f", {headers}).subscribe(data => {
+ this.JsnObje  = data;
+for(let i of this.JsnObje.results)
+{
+  this.apiModel.push(i); 
+  console.log(i.city);
+}
+
+
+
+});
+}
+  //)
+ // .catch(error => console.log('error', error));
+      //}
+    //  console.log(this.apiModel);
+    
+ 
+  }
+
   openWindowCustomClass(content: any) {
-    console.log("clicked !");
+    //console.log("clicked !");
     this.isShow = !this.isShow;
     this.router.navigate(['/Login']);
   }
 
   openDialog() {
     this.dialog.open(LoginComponent);
+  }
+
+   getFullName(value:any) {
+
+    console.log(value[0].street);
+    
+    return value[0];
   }
 
   ngOnInit() {

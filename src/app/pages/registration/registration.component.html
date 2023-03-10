@@ -58,18 +58,24 @@
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Address</label>
-                <textarea type="textarea" formControlName="address" name="address"
+                <textarea type="textarea" #address (input)="GetAddressSugestions(address.value)" formControlName="address" name="address"
                           class="form-control address"></textarea>
+                          <div style="z-index: 1; height: 300px; width:300px;">
+                            <ul>
+                              <li *ngFor="let suggestion of apiModel; index as i;">{{suggestion.street}}</li>
+                            </ul>  
+                          </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>City</label>
-                <select class="form-control" name="city" id="city" formControlName="city">
+                <input class="form-control" type="text" name="city">
+                <!-- <select class="form-control" name="city" id="city" formControlName="city">
 
                   <option value="" disabled selected>Select City</option>
                   <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
-                </select>
+                </select> -->
               </div>
             </div>
           </div>
@@ -77,10 +83,12 @@
             <div class="col-md-6 mb-4">
               <div class="form-group p-3">
                 <label>State</label>
-                <select class="form-control" name="state" id="state" formControlName="state">
+                                <input class="form-control" type="text" name="city">
+
+                <!-- <select class="form-control" name="state" id="state" formControlName="state">
                   <option value="" disabled selected>Select State</option>
                   <option *ngFor="let state of State" [value]="state">{{state}}</option>
-                </select>
+                </select> -->
               </div>
             </div>
             <div class="col-md-6">
