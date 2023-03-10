@@ -1,5 +1,5 @@
-
-
+<app-toasts style="float: right;"></app-toasts>
+<app-toasts></app-toasts>
 <div class="container">
   <div><h2 class="text-center m-3 p-3x">Open An Account</h2></div>
   <div class="centerRegistrationForm mt-5 mr-5 ">
@@ -11,13 +11,13 @@
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>First Name</label>
-                <input name="firstName" formControlName="firstName" class="form-control">
+                <input required minlength="5" name="firstName" formControlName="firstName" class="form-control">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Last Name</label>
-                <input name="lastName" formControlName="lastName" class="form-control">
+                <input required minlength="5" name="lastName" formControlName="lastName" class="form-control">
               </div>
             </div>
           </div>
@@ -25,13 +25,13 @@
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Email</label>
-                <input type="email" class="form-control" formControlName="email" name="email">
+                <input required type="email" class="form-control" formControlName="email" name="email">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Password</label>
-                <input type="password" class="form-control" formControlName="password" name="password">
+                <input required minlength="6" type="password" class="form-control" formControlName="password" name="password">
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
               <div class="form-group p-3">
                 <label>Phone</label>
 
-                <input type="number" formControlName="phone" name="phone" class="form-control">
+                <input type="number" required formControlName="phone" name="phone" class="form-control">
               </div>
             </div>
           </div>
@@ -58,18 +58,18 @@
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Address</label>
-                <textarea type="textarea" formControlName="address" name="address"
-                          class="form-control address"></textarea>
+                <textarea type="textarea" formControlName="address" name="address" class="form-control address"></textarea>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>City</label>
-                <select class="form-control" name="city" id="city" formControlName="city">
+                <input class="form-control" type="text" name="city">
+                <!-- <select class="form-control" name="city" id="city" formControlName="city">
 
                   <option value="" disabled selected>Select City</option>
                   <option *ngFor="let city of Cities" [value]="city">{{city}}</option>
-                </select>
+                </select> -->
               </div>
             </div>
           </div>
@@ -77,16 +77,17 @@
             <div class="col-md-6 mb-4">
               <div class="form-group p-3">
                 <label>State</label>
-                <select class="form-control" name="state" id="state" formControlName="state">
+                <input class="form-control" type="text" name="state">
+                <!-- <select class="form-control" name="state" id="state" formControlName="state">
                   <option value="" disabled selected>Select State</option>
                   <option *ngFor="let state of State" [value]="state">{{state}}</option>
-                </select>
+                </select> -->
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group p-3">
                 <label>Zip Code</label>
-                <input name="postalCode" class="form-control" formControlName="postalCode">
+                <input type="number" required maxlength="6" name="postalCode" class="form-control" formControlName="postalCode">
               </div>
             </div>
            

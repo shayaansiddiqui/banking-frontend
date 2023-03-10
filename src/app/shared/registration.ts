@@ -9,8 +9,9 @@ export class Registration {
     public city!: string;
     public state!: string;
     public postalCode!:string;
-    public phone!:string;
+    public phone!:number;
     public status!:boolean;
     public country!:string;
     public dateOfBirth!:string;
   }
+  

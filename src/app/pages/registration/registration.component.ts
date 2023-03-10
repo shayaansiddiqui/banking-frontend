@@ -53,7 +53,8 @@ export class RegistrationComponent {
     this.showSuccess();
     this.submitted = true;
     // console.log(this.service.registrationForm.value);
-alert("onSubmit");
+//alert("onSubmit");
+
     if (this.service.registrationForm.valid) {
       alert("registrationForm");
       //this.service.registerUser();

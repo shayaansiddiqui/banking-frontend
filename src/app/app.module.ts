@@ -13,6 +13,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {LoginComponent} from "./pages/login/login.component";
 import {RegistrationComponent} from "./pages/registration/registration.component";
 import { LandingComponent } from './pages/landing/landing.component';
+import { HeaderComponent } from './pages/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LandingComponent } from './pages/landing/landing.component';
     LoginComponent,
     RegistrationComponent,
     ToastComponent,
-    LandingComponent
+    LandingComponent,
+    HeaderComponent
     ],
   imports: [
     BrowserModule,

@@ -7,7 +7,6 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistrationService {
-  
     readonly baseUrl = "https://localhost:7235/api/BankCustomer";
 
   constructor(private fb : FormBuilder,private http : HttpClient) { }
@@ -15,34 +14,31 @@ export class RegistrationService {
       id:[0],
       firstName:['',[Validators.required,Validators.maxLength(10)]],
       lastName:[''],
-      email:['',[Validators.required]],
-      password:['',[Validators.required,Validators.minLength(6)]],
+      email:['',[Validators.required,Validators.email]],
+      password:['',[Validators.required,Validators.minLength(6),Validators.pattern('[- +()0-9]+')]],
       city:['',Validators.required],
       state:['',Validators.required],
-      postalCode:['',Validators.required],
-      phone:['',[Validators.required,Validators.minLength(10)]],
-      dateOfBirth:['',Validators.required],
-      address : ['']
+      postalCode:['',[Validators.required,Validators.minLength(6)]],
+      phone:[0,[Validators.required,Validators.minLength(10)]],
+      address : ['',]
   })
    
 
 registerUser()
 {
-      const headers = { 'content-type': 'application/json'};
-      // console.log("Register User");
-    this.http.post(this.baseUrl, this.registrationForm.value, {headers}).subscribe(result => 
-      console.log("Testing "), err => {
-        console.error(err);
-        this.handleError(err);
-    });
-      // if (!result.error) {
-      //   {
-      //     this.showSuccess();    
-      //   }
-      //   else {
-      //     this.showError();
-      //   }
-      // }
+        const headers = { 'content-type': 'application/json'};
+          // console.log("Register User");
+        this.http.post(this.baseUrl, this.registrationForm.value, {headers}).subscribe(result => 
+          console.log("Testing "), err => {
+            console.error(err);
+            this.handleError(err);
+  });
+  
+  // else{
+  //   "<span>Please Enter New Email Address</span>";
+  // }
+      
+    
 };
 
 

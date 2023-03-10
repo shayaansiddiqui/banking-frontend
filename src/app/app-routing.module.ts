@@ -5,13 +5,15 @@ import {RegistrationComponent} from "./pages/registration/registration.component
 import {AppComponent} from './app.component';
 import {LoginComponent} from "./pages/login/login.component";
 import { LandingComponent } from './pages/landing/landing.component';
+import { HeaderComponent } from './pages/header/header.component';
 
 
 const routes: Routes = [
   {path: '#', component: AppComponent},
   {path: 'Registration', component: RegistrationComponent, data: {animation: 'isDown'}},
   {path: 'Login', component: LoginComponent, data: {animation: 'isUp'}},
-  {path: 'Landing', component: LandingComponent}
+  {path: 'Landing', component: LandingComponent},
+  {path: 'Header', component: HeaderComponent}
 ];
 
 
