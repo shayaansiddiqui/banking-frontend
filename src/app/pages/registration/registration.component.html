@@ -60,9 +60,9 @@
                 <label>Address</label>
                 <textarea type="textarea" #address (input)="GetAddressSugestions(address.value)" formControlName="address" id="address" name="address"
                           class="form-control address"></textarea>
-                          <div class="autocomplete">
+                          <div class="autocomplete" *ngIf="addressInput">
                             <ul>
-                              <li class="autocomplete-items"  *ngFor="let suggestion of apiModel; index as i;" (click)="Setfields(suggestion.city,suggestion.state);">{{suggestion.street}}</li>
+                              <li class="autocomplete-items"  *ngFor="let suggestion of apiModel" (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode);">{{suggestion.address_line1 + " " + suggestion.address_line2}}</li>
                             </ul>  
                           </div>
                           

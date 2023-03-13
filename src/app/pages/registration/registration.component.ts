@@ -21,7 +21,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  
+  addressInput = true;
   apiModel : AddressApiDto[] = [];
   JsnObje : any = {};
   baseUrl = "https://localhost:7235/api/BankCustomer";
@@ -74,13 +74,15 @@ export class RegistrationComponent {
 
   GetAddressSugestions(search :any)
   {
-    this.apiModel = [];  
+    //this.isDisabled = !this.isDisabled;
+    
       if (search.length > 2) {
 
   const headers = { 'content-type': 'application/json'};
    //console.log("Register User");
     this.HttpClient.get("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&filter=countrycode:us&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f", {headers}).subscribe(data => {
     this.JsnObje  = data;
+<<<<<<< HEAD
     
     console.log(data);
 for(let i of this.JsnObje.results)
@@ -90,11 +92,19 @@ for(let i of this.JsnObje.results)
 }
 });
 }
+=======
+    this.apiModel = []; 
+      for(let i of this.JsnObje.results)
+      {
+        this.apiModel.push(i); 
+        console.log(i);
+      }
+      this.addressInput = true;
+      });
+      }
+>>>>>>> 400b15ec47329872b644da91028cfc41c1c1e17b
   }
 
-  selectEvent() {
-    
-  }
 
   openWindowCustomClass(content: any) {
     //console.log("clicked !");
@@ -122,13 +132,16 @@ for(let i of this.JsnObje.results)
     this.submitted = false;
   }
 
-  Setfields(cityname:string,statename:string)
+  Setfields(cityname:string,statename:string,address:string,zipcode:string)
   {
-    console.log(cityname + " "+ statename);
+    //console.log(cityname + " "+ statename);
+    this.addressInput = false;
     this.service.registrationForm.patchValue(
       {
         city:cityname,
-        state:statename
+        state:statename,
+        address:address,
+        postalCode:zipcode
       }
     );
     this.service.registrationForm.updateValueAndValidity();

@@ -7,7 +7,8 @@ export interface AddressApiDto {
     county: string;
     postcode: string;
     city: string;
-    street: string;
+    address_line1: string;
+    address_line2: string;
     housenumber: string;
   }
   
