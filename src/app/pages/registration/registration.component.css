@@ -54,6 +54,7 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
   background-color: #fff;
   border-bottom: 1px solid #d4d4d4;
+  border-top: 1px solid #d4d4d4;
 }
 .autocomplete-items:hover {
   /*when hovering an item:*/
@@ -70,6 +71,5 @@ li{
 ul{
   width: 304px;
   padding-left: 0px;
-  position: absolute;
   z-index: 1;
 }
