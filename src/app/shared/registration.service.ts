@@ -13,15 +13,15 @@ export class RegistrationService {
   registrationForm = this.fb.group({
       id:[0],
       firstName:['',[Validators.required,Validators.maxLength(10)]],
-      lastName:[''],
+      lastName:['',[Validators.required]],
       email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.minLength(6),Validators.pattern('[- +()0-9]+')]],
+      password:['',[Validators.required,Validators.minLength(6)]],
       city:['',Validators.required],
       state:['',Validators.required],
       dateOfBirth:['',Validators.required],
       postalCode:['',[Validators.required,Validators.minLength(6)]],
       phone:[0,[Validators.required,Validators.minLength(10)]],
-      address : ['',]
+      address : ['',Validators.required]
   })
    
 
@@ -55,10 +55,7 @@ private handleError(error: HttpErrorResponse) {
   }
   // Return an observable with a user-facing error message.
   return throwError(() => new Error('Something bad happened; please try again later.'));
-}
-
-
-}
+}}
 
 
 

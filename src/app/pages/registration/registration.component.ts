@@ -121,10 +121,17 @@ for(let i of this.JsnObje.results)
     this.submitted = false;
   }
 
-  Setfields(city:string)
+  Setfields(cityname:string,statename:string)
   {
-    console.log(city);
-    this.service.registrationForm.controls['city'].setValue(city);
+    console.log(cityname + " "+ statename);
+    this.service.registrationForm.patchValue(
+      {
+        city:cityname,
+        state:statename
+      }
+    );
+    this.service.registrationForm.updateValueAndValidity();
+
   }
 
   showStandard() {
