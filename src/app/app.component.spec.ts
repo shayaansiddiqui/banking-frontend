@@ -28,4 +28,12 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('banking-frontend app is running!');
   });
+
+  it('Test function',()=>{
+    let num = 1;
+    expect(num).toBe(1);
+  })
+
 });
+
+
