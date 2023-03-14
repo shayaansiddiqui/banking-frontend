@@ -15,12 +15,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+  title = 'Registration-Component';
   addressInput = true;
   apiModel : AddressApiDto[] = [];
   JsnObje : any = {};

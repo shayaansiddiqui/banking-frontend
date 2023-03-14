@@ -15,6 +15,7 @@ import {RegistrationComponent} from "./pages/registration/registration.component
 import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 @NgModule({
   declarations: [
@@ -33,13 +34,15 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatDialogModule,
-    HttpClientModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     MatAutocompleteModule
 
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    HttpClientTestingModule
+  ],
   bootstrap: [AppComponent]
 })
 
