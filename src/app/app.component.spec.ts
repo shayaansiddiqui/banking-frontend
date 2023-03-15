@@ -29,14 +29,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('banking-frontend app is running!');
   });
 
-<<<<<<< HEAD
-  it('Test function',()=>{
-    let num = 1;
-    expect(num).toBe(1);
-  })
 
-=======
->>>>>>> 400b15ec47329872b644da91028cfc41c1c1e17b
 });
 
 

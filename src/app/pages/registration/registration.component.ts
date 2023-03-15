@@ -82,17 +82,6 @@ export class RegistrationComponent {
    //console.log("Register User");
     this.HttpClient.get("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&filter=countrycode:us&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f", {headers}).subscribe(data => {
     this.JsnObje  = data;
-<<<<<<< HEAD
-    
-    console.log(data);
-for(let i of this.JsnObje.results)
-{
-  this.apiModel.push(i); 
-  console.log(i);
-}
-});
-}
-=======
     this.apiModel = []; 
       for(let i of this.JsnObje.results)
       {
@@ -102,7 +91,6 @@ for(let i of this.JsnObje.results)
       this.addressInput = true;
       });
       }
->>>>>>> 400b15ec47329872b644da91028cfc41c1c1e17b
   }
 
 
