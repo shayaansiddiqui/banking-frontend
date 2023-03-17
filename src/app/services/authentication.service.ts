@@ -39,7 +39,7 @@ export class AuthenticationService {
     //Add 'implements OnInit' to the class.
     let localUser = localStorage.getItem('user');
     if (localUser) {
-      this.userSubject = new BehaviorSubject<UserModel>(JSON.parse(localUser));
+     // this.userSubject = new BehaviorSubject<UserModel>(JSON.parse(localUser));
       this.user = this.userSubject.asObservable();
     }
   }

@@ -29,17 +29,6 @@ export class RegistrationComponent {
   datepickerConfig: Partial<BsDatepickerConfig>;
   submitted: boolean = false;
 
-  State: string[] = [
-    'Alabama',
-    'Alaska',
-    'Arizona'
-  ];
-
-  Cities: string[] = [
-    'Mohali',
-    'Chandigarh',
-    'Patiala'
-  ];
   formModal: any;
   isShow = false;
   FormControl: any;
