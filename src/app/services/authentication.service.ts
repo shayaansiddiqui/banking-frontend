@@ -23,7 +23,7 @@ export class AuthenticationService {
   decodedToken: any;
   isLogin = new BehaviorSubject<boolean>(false);
   userSubject = new BehaviorSubject<UserModel | null>(null);
-  user = this.userSubject.asObservable();
+  //user = this.userSubject.asObservable();
   ipAddress = "";
 
   /**
@@ -38,10 +38,17 @@ export class AuthenticationService {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     let localUser = localStorage.getItem('user');
+<<<<<<< HEAD
     if (localUser) {
      // this.userSubject = new BehaviorSubject<UserModel>(JSON.parse(localUser));
       this.user = this.userSubject.asObservable();
     }
+=======
+    // if (localUser) {
+    //   this.userSubject = new BehaviorSubject<UserModel>(JSON.parse(localUser));
+    //   this.user = this.userSubject.asObservable();
+    // }
+>>>>>>> 567d2d2a77ec948a1e4b796e908cad4c55c3653a
   }
 
   /**

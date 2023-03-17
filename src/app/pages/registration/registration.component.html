@@ -1,59 +1,103 @@
+
 <div class="container">
-  <div class="row mt-5">
-          <h4>Open A Checking Account</h4>
-          <!-- <h5 class="mt-3">
-              Consider the benefits of opening a Bank of America Advantage Banking Account.
-          </h5> -->
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-          <button type="button" class="registration mt-5"><a class="reg" routerLink="Registration">Open Account</a></button>
+  <div><h2 class="text-center m-3 p-3x">Open An Account</h2></div>
+  <div class="centerRegistrationForm mt-5 mr-5 ">
+    <!-- animate__animated animate__zoomInDown  -->
+    <div class="card">
+      <div class="card-body p-4">
+        <form [formGroup]="service.registrationForm" (ngSubmit)="onSubmit()" [class.submitted]="submitted">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>First Name</label>
+                <input required minlength="5" name="firstName" formControlName="firstName" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>Last Name</label>
+                <input required minlength="5" name="lastName" formControlName="lastName" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>Email</label>
+                <input required type="email" class="form-control" formControlName="email" name="email">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>Password</label>
+                <input required minlength="6" type="password" class="form-control" formControlName="password" name="password">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>Date Of Birth</label>
+                <input type="text" [bsConfig]="datepickerConfig"  [maxDate]="bsValue" class="form-control" bsDatepicker name="dateOfBirth"
+                       formControlName="dateOfBirth">
+               
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-group p-3">
+                <label>Phone</label>
+
+
+                <input type="number" required formControlName="phone" name="phone" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>Address</label>
+                <textarea type="textarea" #address (input)="GetAddressSugestions(address.value)" formControlName="address" id="address" name="address"
+                          class="form-control address"></textarea>
+                          <div class="autocomplete" *ngIf="addressInput">
+                            <ul>
+                              <li class="autocomplete-items"  *ngFor="let suggestion of apiModel" (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode);">{{suggestion.address_line1 + " " + suggestion.address_line2}}</li>
+                            </ul>  
+                          </div>
+                         
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>City</label>
+                <input class="form-control" formControlName="city" type="text">
+
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="form-group p-3">
+                <label>State</label>
+                <input class="form-control" formControlName="state" type="text" id="state" name="city">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <label>Zip Code</label>
+                <input type="number" id="postcode" required maxlength="6" name="postalCode" class="form-control" formControlName="postalCode">
+              </div>
+            </div>
+           
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-block submit">Submit</button>
+          </div>
+        </form>
       </div>
-      
-      <!-- <div class="col-md-6 mt-5">
-          <img src="../../../assets/images/bank.jpg" height="300px;" width="400px;">
-      </div> -->
-     
-  </div>
-  
-<div class="container mx-auto mt-4">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-  <img src="../../../assets/images/spend.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Spend</h5>
-        <h6 class="card-subtitle mb-2">Start Spending</h6>
-    <p class="card-text">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-       <a href="#" class="btn mr-2">Start Spending</a>
-    <!-- <a href="#" class="btn "><i class="fab fa-github"></i> Github</a> -->
-  </div>
-  </div>
-    </div>    
-       <div class="col-md-4">
-<div class="card" style="width: 18rem;">
-  <img src="../../../assets/images/save.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Save</h5>
-        <h6 class="card-subtitle mb-2">Start Saving</h6>
-    <p class="card-text">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-    <a href="#" class="btn mr-2">Start Saving</a>
-    <!-- <a href="#" class="btn"><i class="fab fa-github"></i> Github</a> -->
-  </div>
-  </div>
-    </div>    
-          <div class="col-md-4">
-<div class="card" style="width: 18rem;">
-  <img src="../../../assets/images/donate.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Donate</h5>
-        <h6 class="card-subtitle mb-2">Start Donating</h6>
-    <p class="card-text">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-    <a href="#" class="btn mr-2">Start Donating</a>
-    <!-- <a href="#" class="btn "><i class="fab fa-github"></i> Github</a> -->
-  </div>
-  </div>
-  </div>
-    
-   </div>
-   </div>
+    </div>
+
+ 
+
+
+

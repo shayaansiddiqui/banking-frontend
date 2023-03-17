@@ -14,10 +14,10 @@ export class LoginComponent {
   model = new Login();
   baseUrl = "https://localhost:7235/api/Login";
   submitted: boolean = false;
-
+  err: any;
+  loginForm: any;
   constructor(private dialog: MatDialog, private http: HttpClient, private router: Router, public Service: LoginService) {
-
-
+    this.onSubmit();
   }
 
   onSubmit() {

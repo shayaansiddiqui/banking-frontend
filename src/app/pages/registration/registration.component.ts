@@ -2,18 +2,16 @@ import { Component } from '@angular/core';
 import {BsDatepickerConfig} from "ngx-bootstrap/datepicker";
 import {RegistrationService} from "../../shared/registration.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {FormBuilder,FormControl} from "@angular/forms";
 import {ToastService} from "../../services/toast.service";
 import {LoginComponent} from "../login/login.component";
 import {Registration} from "../../shared/registration";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddressApiDto } from "../../model/AddressApiDto";
 import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
-
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -21,6 +19,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+  title = 'Registration-Component';
   addressInput = true;
   apiModel : AddressApiDto[] = [];
   JsnObje : any = {};
@@ -28,16 +27,13 @@ export class RegistrationComponent {
   bsValue = new Date();
   datepickerConfig: Partial<BsDatepickerConfig>;
   submitted: boolean = false;
-
   formModal: any;
   isShow = false;
   FormControl: any;
 
-  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule) {
+  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule, private Router: Router) {
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
-  
- 
-  
+
     this.bsValue.setFullYear(this.bsValue.getFullYear() - 20);
     console.log(this.bsValue);
   }

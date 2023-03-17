@@ -42,13 +42,13 @@ const enterTransition = trigger('routeAnimations', [
 
 export class AppComponent {
   title = 'banking-frontend';
-  constructor(private contexts: ChildrenOutletContexts) {
+  constructor() {
     
   }
 
-  getRouteAnimationData() {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
-  }
+  // getRouteAnimationData() {
+  //   return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  // }
 
   sum()
   {

@@ -7,7 +7,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { AppRoutingModule } from "./app-routing.module";
 import { MatDialogModule } from '@angular/material/dialog';
-import { HttpClientModule, HttpHeaders  } from '@angular/common/http';
+import { HttpClientModule, HttpClient  } from '@angular/common/http';
 import { ToastComponent } from './toast/toast.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {LoginComponent} from "./pages/login/login.component";
@@ -33,13 +33,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatDialogModule,
-    HttpClientModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
-    MatAutocompleteModule
-
+    MatAutocompleteModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 

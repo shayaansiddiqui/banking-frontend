@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {RouterModule} from "@angular/router";
 
 
 @Component({
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class LandingComponent {
 
 
-  constructor(private router: Router) {
+  constructor(private RouterModule: RouterModule) {
 
 
   }
