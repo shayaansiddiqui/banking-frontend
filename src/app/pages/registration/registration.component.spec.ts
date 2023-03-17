@@ -1,7 +1,7 @@
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RegistrationComponent } from './registration.component';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
@@ -18,7 +18,6 @@ describe('RegistrationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule,
         MatDialogModule,
         MatAutocompleteModule,
         ReactiveFormsModule,

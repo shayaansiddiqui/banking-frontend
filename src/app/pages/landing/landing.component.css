@@ -46,4 +46,6 @@ a{
     margin-left: 50px;
   }
   
-  
+  @media only screen and (max-width: 844) {
+    
+  }

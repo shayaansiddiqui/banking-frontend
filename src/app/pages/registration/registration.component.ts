@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {BsDatepickerConfig} from "ngx-bootstrap/datepicker";
 import {RegistrationService} from "../../shared/registration.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {FormBuilder,FormControl} from "@angular/forms";
 import {ToastService} from "../../services/toast.service";
@@ -11,7 +11,8 @@ import {Registration} from "../../shared/registration";
 import { AddressApiDto } from "../../model/AddressApiDto";
 import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { RouterModule } from '@angular/router';
+import {Router} from "@angular/router";
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -30,7 +31,7 @@ export class RegistrationComponent {
   isShow = false;
   FormControl: any;
 
-  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule, private RouterModule: RouterModule) {
+  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule, private Router: Router) {
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
 
     this.bsValue.setFullYear(this.bsValue.getFullYear() - 20);
