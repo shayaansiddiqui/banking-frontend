@@ -8,14 +8,10 @@ import {FormBuilder,FormControl} from "@angular/forms";
 import {ToastService} from "../../services/toast.service";
 import {LoginComponent} from "../login/login.component";
 import {Registration} from "../../shared/registration";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddressApiDto } from "../../model/AddressApiDto";
 import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
-
-
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -30,27 +26,13 @@ export class RegistrationComponent {
   bsValue = new Date();
   datepickerConfig: Partial<BsDatepickerConfig>;
   submitted: boolean = false;
-
-  State: string[] = [
-    'Alabama',
-    'Alaska',
-    'Arizona'
-  ];
-
-  Cities: string[] = [
-    'Mohali',
-    'Chandigarh',
-    'Patiala'
-  ];
   formModal: any;
   isShow = false;
   FormControl: any;
 
-  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule) {
+  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule, private RouterModule: RouterModule) {
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
-  
- 
-  
+
     this.bsValue.setFullYear(this.bsValue.getFullYear() - 20);
     console.log(this.bsValue);
   }

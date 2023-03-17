@@ -7,7 +7,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { AppRoutingModule } from "./app-routing.module";
 import { MatDialogModule } from '@angular/material/dialog';
-import { HttpClientModule, HttpHeaders  } from '@angular/common/http';
+import { HttpClientModule, HttpClient  } from '@angular/common/http';
 import { ToastComponent } from './toast/toast.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {LoginComponent} from "./pages/login/login.component";
@@ -15,7 +15,6 @@ import {RegistrationComponent} from "./pages/registration/registration.component
 import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 @NgModule({
   declarations: [
@@ -36,12 +35,11 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
     MatDialogModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
-    MatAutocompleteModule
-
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   providers: [
-    HttpClientModule,
-    HttpClientTestingModule
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })
