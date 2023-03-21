@@ -16,6 +16,7 @@ export class LoginComponent {
   submitted: boolean = false;
   err: any;
   loginForm: any;
+
   constructor(private dialog: MatDialog, private http: HttpClient, private router: Router, public Service: LoginService) {
     this.onSubmit();
   }
@@ -33,7 +34,7 @@ export class LoginComponent {
 
 
       }), (err: HttpErrorResponse) => {
-        "handle your error here"
+        console.log(err.message);
       }
     }
   }

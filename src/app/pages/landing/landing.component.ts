@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterModule} from "@angular/router";
 
 
@@ -8,11 +8,6 @@ import {RouterModule} from "@angular/router";
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
-
-
   constructor(private RouterModule: RouterModule) {
-
-
   }
-
 }

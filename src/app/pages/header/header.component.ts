@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { animate, animation, style,state, transition, trigger, query, group } from '@angular/animations';
-import { RouterOutlet, ChildrenOutletContexts} from "@angular/router";
+import {Component} from '@angular/core';
+import {animate, animation, style, state, transition, trigger, query, group} from '@angular/animations';
+import {RouterOutlet, ChildrenOutletContexts} from "@angular/router";
+
 const enterTransition = trigger('routeAnimations', [
   transition('* <=> *', [
     // Set a default  style for enter and leave
@@ -12,11 +13,11 @@ const enterTransition = trigger('routeAnimations', [
         opacity: 0,
         transform: 'scale(0) translateY(100%)',
       }),
-    ],{ optional: true }),
+    ], {optional: true}),
     // Animate the new page in
     query(':enter', [
-      animate('600ms ease', style({ opacity: 1, transform: 'scale(1) translateY(0)' })),
-    ],{ optional: true })
+      animate('600ms ease', style({opacity: 1, transform: 'scale(1) translateY(0)'})),
+    ], {optional: true})
   ]),
 ]);
 
@@ -24,22 +25,23 @@ const enterTransition = trigger('routeAnimations', [
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  animations:[enterTransition,
-    
+  animations: [enterTransition,
+
     // transformer,
     // fader,
     // slider,
     // stepper
   ]
 })
-  
+
 export class HeaderComponent {
   constructor(private contexts: ChildrenOutletContexts) {
-    
+
   }
+
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
-  
+
 
 }

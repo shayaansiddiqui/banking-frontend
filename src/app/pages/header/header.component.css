@@ -1,21 +1,25 @@
-.navigation{
-    background-color: #202A44;
+.navigation {
+  background-color: #202A44;
 }
-.login-button{
-    color: red;
-    font-size: 20px;
-    margin-right: 60px;
+
+.login-button {
+  color: red;
+  font-size: 20px;
+  margin-right: 60px;
 }
-.logo{
-    font-size: 40px;
-    color: navy;
-    margin-left: 20px;
+
+.logo {
+  font-size: 40px;
+  color: navy;
+  margin-left: 20px;
 }
-a{
-    text-decoration: none;
+
+a {
+  text-decoration: none;
 }
-.registration{
-    background-color: #344E87;
-    font-size: 30px;
-    border-color: #344E87;
+
+.registration {
+  background-color: #344E87;
+  font-size: 30px;
+  border-color: #344E87;
 }

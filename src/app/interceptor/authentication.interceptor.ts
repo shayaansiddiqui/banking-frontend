@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {Injectable} from '@angular/core';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 import {
   HttpRequest,
@@ -14,13 +14,14 @@ import {AuthenticationService} from "../services/authentication.service";
 export class AuthenticationInterceptor implements HttpInterceptor {
   private authToken: any;
   private authRequest: any;
-  constructor(private authService: AuthenticationService, private HttpClientTestingModule: HttpClientTestingModule) {}
+
+  constructor(private authService: AuthenticationService, private HttpClientTestingModule: HttpClientTestingModule) {
+  }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const req1 = request.clone({ url: `${request.url}` });
+    const req1 = request.clone({url: `${request.url}`});
     // Check if the user is logged in
-    if(this.authService.isLoggedIn())
-    {
+    if (this.authService.isLoggedIn()) {
       // Get the auth token from the service.
       this.authToken = this.authService.getToken();
     }

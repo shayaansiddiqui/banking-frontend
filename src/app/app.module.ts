@@ -1,19 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
-import { NgClass } from '@angular/common';
-import { AppRoutingModule } from "./app-routing.module";
-import { MatDialogModule } from '@angular/material/dialog';
-import { HttpClientModule, HttpClient  } from '@angular/common/http';
-import { ToastComponent } from './toast/toast.component';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {NgClass} from '@angular/common';
+import {AppRoutingModule} from "./app-routing.module";
+import {MatDialogModule} from '@angular/material/dialog';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {ToastComponent} from './toast/toast.component';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {LoginComponent} from "./pages/login/login.component";
 import {RegistrationComponent} from "./pages/registration/registration.component";
-import { LandingComponent } from './pages/landing/landing.component';
-import { HeaderComponent } from './pages/header/header.component';
+import {LandingComponent} from './pages/landing/landing.component';
+import {HeaderComponent} from './pages/header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
@@ -24,7 +24,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ToastComponent,
     LandingComponent,
     HeaderComponent
-    ],
+  ],
   imports: [
     BrowserModule,
     NgbModule,
@@ -44,4 +44,5 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+}

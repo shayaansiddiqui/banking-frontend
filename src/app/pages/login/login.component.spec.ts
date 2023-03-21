@@ -1,10 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialogModule } from '@angular/material/dialog';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { LoginComponent } from './login.component';
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { By } from '@angular/platform-browser';
-import { LoginService } from 'src/app/shared/login.service';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {MatDialogModule} from '@angular/material/dialog';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {LoginComponent} from './login.component';
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
+import {By} from '@angular/platform-browser';
+import {LoginService} from 'src/app/shared/login.service';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -17,16 +17,17 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [
-        { provide: LoginService, useClass: LoginService 
+        {
+          provide: LoginService, useClass: LoginService
         }],
       imports: [MatDialogModule,
         HttpClientTestingModule,
         ReactiveFormsModule,
         FormsModule
       ],
-      declarations: [ LoginComponent ]
+      declarations: [LoginComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;

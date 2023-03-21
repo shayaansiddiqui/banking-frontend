@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BsDatepickerConfig} from "ngx-bootstrap/datepicker";
 import {RegistrationService} from "../../shared/registration.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {FormBuilder,FormControl} from "@angular/forms";
+import {FormBuilder, FormControl} from "@angular/forms";
 import {ToastService} from "../../services/toast.service";
 import {LoginComponent} from "../login/login.component";
 import {Registration} from "../../shared/registration";
-import { AddressApiDto } from "../../model/AddressApiDto";
-import { HttpClient, HttpErrorResponse , HttpHeaders  } from '@angular/common/http';
+import {AddressApiDto} from "../../model/AddressApiDto";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {Router} from "@angular/router";
 
@@ -21,8 +21,8 @@ import {Router} from "@angular/router";
 export class RegistrationComponent {
   title = 'Registration-Component';
   addressInput = true;
-  apiModel : AddressApiDto[] = [];
-  JsnObje : any = {};
+  apiModel: AddressApiDto[] = [];
+  JsnObje: any = {};
   baseUrl = "https://localhost:7235/api/BankCustomer";
   bsValue = new Date();
   datepickerConfig: Partial<BsDatepickerConfig>;
@@ -31,7 +31,7 @@ export class RegistrationComponent {
   isShow = false;
   FormControl: any;
 
-  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient,public MatAutocompleteModule: MatAutocompleteModule, private Router: Router) {
+  constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient, public MatAutocompleteModule: MatAutocompleteModule, private Router: Router) {
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
 
     this.bsValue.setFullYear(this.bsValue.getFullYear() - 20);
@@ -41,15 +41,14 @@ export class RegistrationComponent {
   onSubmit() {
     this.showSuccess();
     this.submitted = true;
-     console.log(this.service.registrationForm.value);
+    console.log(this.service.registrationForm.value);
     alert("onSubmit");
     if (this.service.registrationForm.valid) {
       alert("registrationForm");
       //this.service.registerUser();
       this.showSuccess();
 
-    }
-    else{
+    } else {
       this.showError();
     }
   }
@@ -57,25 +56,23 @@ export class RegistrationComponent {
   showModal(element?: any) {
   }
 
-  GetAddressSugestions(search :any)
-  {
+  GetAddressSugestions(search: any) {
     //this.isDisabled = !this.isDisabled;
-    
-      if (search.length > 2) {
 
-  const headers = { 'content-type': 'application/json'};
-   //console.log("Register User");
-    this.HttpClient.get("https://api.geoapify.com/v1/geocode/autocomplete?text="+search+"&lang=en&limit=5&filter=countrycode:us&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f", {headers}).subscribe(data => {
-    this.JsnObje  = data;
-    this.apiModel = []; 
-      for(let i of this.JsnObje.results)
-      {
-        this.apiModel.push(i); 
-        console.log(i);
-      }
-      this.addressInput = true;
+    if (search.length > 2) {
+
+      const headers = {'content-type': 'application/json'};
+      //console.log("Register User");
+      this.HttpClient.get("https://api.geoapify.com/v1/geocode/autocomplete?text=" + search + "&lang=en&limit=5&filter=countrycode:us&format=json&apiKey=4b4eccb5b9c84d1a990c8241de9d159f", {headers}).subscribe(data => {
+        this.JsnObje = data;
+        this.apiModel = [];
+        for (let i of this.JsnObje.results) {
+          this.apiModel.push(i);
+          console.log(i);
+        }
+        this.addressInput = true;
       });
-      }
+    }
   }
 
 
@@ -89,10 +86,10 @@ export class RegistrationComponent {
     this.dialog.open(LoginComponent);
   }
 
-   getFullName(value:any) {
+  getFullName(value: any) {
 
     console.log(value[0].street);
-    
+
     return value[0];
   }
 
@@ -105,16 +102,15 @@ export class RegistrationComponent {
     this.submitted = false;
   }
 
-  Setfields(cityname:string,statename:string,address:string,zipcode:string)
-  {
+  Setfields(cityname: string, statename: string, address: string, zipcode: string) {
     //console.log(cityname + " "+ statename);
     this.addressInput = false;
     this.service.registrationForm.patchValue(
       {
-        city:cityname,
-        state:statename,
-        address:address,
-        postalCode:zipcode
+        city: cityname,
+        state: statename,
+        address: address,
+        postalCode: zipcode
       }
     );
     this.service.registrationForm.updateValueAndValidity();
@@ -155,5 +151,5 @@ export class RegistrationComponent {
       autohide: true
     });
   }
- 
+
 }
