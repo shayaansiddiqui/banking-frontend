@@ -13,8 +13,11 @@ import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {LoginComponent} from "./pages/login/login.component";
 import {RegistrationComponent} from "./pages/registration/registration.component";
 import {LandingComponent} from './pages/landing/landing.component';
-import {HeaderComponent} from './pages/header/header.component';
+import {HeaderComponent} from './common/header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { FooterComponent } from './common/footer/footer.component';
+import { DepositComponent } from './pages/deposit/deposit.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     RegistrationComponent,
     ToastComponent,
     LandingComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    DepositComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,9 @@
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+.card{
+  margin-top: 70px;
+}
 
 @media (min-width: 992px) {
   .rounded-tr-lg-0 {

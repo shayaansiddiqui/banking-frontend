@@ -17,7 +17,7 @@ export class LoginComponent {
   err: any;
   loginForm: any;
 
-  constructor(private dialog: MatDialog, private http: HttpClient, private router: Router, public Service: LoginService) {
+  constructor(private dialog: MatDialog, private http: HttpClient, public router: Router, public Service: LoginService) {
     this.onSubmit();
   }
 
@@ -26,11 +26,11 @@ export class LoginComponent {
     this.submitted = true;
     console.log(this.Service.loginForm.value);
     if (this.Service.loginForm.valid) {
-      console.log("Form Valid");
+      //console.log("Form Valid");
       const headers = {'content-type': 'application/json'};
       this.http.post(this.baseUrl, this.Service.loginForm.value, {headers}).subscribe(result => {
-        this.router.navigate(['#']);
-        console.warn("result", result);
+        this.router.navigate(['Dashboard']);
+        //console.warn("result", result);
 
 
       }), (err: HttpErrorResponse) => {

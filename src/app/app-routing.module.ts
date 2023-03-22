@@ -5,7 +5,8 @@ import {RegistrationComponent} from "./pages/registration/registration.component
 import {AppComponent} from './app.component';
 import {LoginComponent} from "./pages/login/login.component";
 import {LandingComponent} from './pages/landing/landing.component';
-import {HeaderComponent} from './pages/header/header.component';
+import {HeaderComponent} from './common/header/header.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'registration', component: RegistrationComponent, data: {animation: 'isDown'}},
   {path: 'login', component: LoginComponent, data: {animation: 'isUp'}},
   {path: 'Landing', component: LandingComponent},
-  {path: 'Header', component: HeaderComponent}
+  {path: 'Header', component: HeaderComponent},
+  { path: 'Dashboard', component: DashboardComponent}
 ];
 
 

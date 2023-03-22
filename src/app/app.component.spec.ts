@@ -1,6 +1,6 @@
 import {TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './pages/header/header.component';
+import {HeaderComponent} from './common/header/header.component';
 import {LandingComponent} from './pages/landing/landing.component';
 import {RouterOutlet} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';

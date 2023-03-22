@@ -1,3 +1,6 @@
+.reg_form{
+  background-color: #0073CF;
+}
 .centerRegistrationForm {
   padding-right: 10%;
   padding-left: 10%;
@@ -79,4 +82,8 @@ ul {
   width: 304px;
   padding-left: 0;
   z-index: 1;
+}
+
+.reg{
+  margin-top: 70px;
 }
