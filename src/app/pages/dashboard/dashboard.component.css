@@ -193,3 +193,8 @@ table.account-data {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
+.sign-out{
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+}
