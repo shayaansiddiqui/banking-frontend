@@ -19,6 +19,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { DepositComponent } from './pages/deposit/deposit.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {DateYearPipe} from "./pipes/date.year.pipe";
+import {TransactionComponent} from "./pages/transaction/transaction.component";
 
 @NgModule({
   declarations: [
