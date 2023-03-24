@@ -1,62 +1,195 @@
-body{margin-top:20px;
-    background-color:#f2f6fc;
-    color:#69707a;
-    }
-    .img-account-profile {
-        height: 10rem;
-    }
-    .rounded-circle {
-        border-radius: 50% !important;
-    }
-    .card {
-        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
-    }
-    .card .card-header {
-        font-weight: 500;
-    }
-    .card-header:first-child {
-        border-radius: 0.35rem 0.35rem 0 0;
-    }
-    .card-header {
-        padding: 1rem 1.35rem;
-        margin-bottom: 0;
-        background-color: rgba(33, 40, 50, 0.03);
-        border-bottom: 1px solid rgba(33, 40, 50, 0.125);
-    }
-    .form-control, .dataTable-input {
-        display: block;
-        width: 100%;
-        padding: 0.875rem 1.125rem;
-        font-size: 0.875rem;
-        font-weight: 400;
-        line-height: 1;
-        color: #69707a;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #c5ccd6;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border-radius: 0.35rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-    
-    .nav-borders .nav-link.active {
-        color: #0061f2;
-        border-bottom-color: #0061f2;
-    }
-    .nav-borders .nav-link {
-        color: #69707a;
-        border-bottom-width: 0.125rem;
-        border-bottom-style: solid;
-        border-bottom-color: transparent;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    .dashboard{
-        margin-top: 70px;
-    }
+body {
+  margin-top: 20px;
+  background-color: #f2f6fc;
+  color: #69707a;
+}
+
+.container {
+  margin-top: 2vh;
+}
+
+.bg-primary {
+  background-color: rgb(19, 55, 102, 255) !important;
+}
+
+.menu-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-bar > ul.navbar-nav:last-child {
+  border: 1px solid white;
+  /*padding: 5px;*/
+  border-radius: 8px;
+  /*width: 95px;*/
+  text-align: center;
+  font-size: medium;
+  background-color: rgb(12, 33, 60);
+  height: 4vh;
+  font-weight: bold;
+  color: #ffffff !important;
+  z-index: 100;
+}
+
+.img-account-profile {
+  height: 10rem;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.card {
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+}
+
+.card .card-header {
+  font-weight: 500;
+}
+
+.card-header:first-child {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.card-header {
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 40, 50, 0.03);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+
+.form-control, .dataTable-input {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #69707a;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c5ccd6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.nav-borders .nav-link.active {
+  color: #0061f2;
+  border-bottom-color: #0061f2;
+}
+
+.navbar {
+  padding: 3px 0 3px 0 !important;
+}
+
+.nav-item {
+  color: white;
+  width: 215px;
+  text-align: center;
+}
+
+div.menu-bar > ul:first-child > .nav-item > .nav-link:hover {
+  text-decoration: underline;
+  background-color: rgb(30,86,160);
+}
+
+.nav-borders .nav-link {
+  color: #69707a;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  /*padding-top: 0.5rem;*/
+  /*padding-bottom: 0.5rem;*/
+  /*padding-left: 0;*/
+  /*padding-right: 0;*/
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.dashboard {
+  margin-top: 70px;
+}
+
+.summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.profile-help {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile, .support, .points {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  min-width: 40vh;
+  gap: 10px;
+}
+
+.points {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(220, 218, 213);
+}
+
+.points > span {
+  font-weight: bolder;
+}
+
+.points > span:last-child {
+  font-weight: bold;
+}
+
+.profile > span:first-child {
+  font-weight: bold;
+}
+
+.profile > button {
+  border: none;
+}
+
+.account-summary, .account-spend {
+  width: 100%;
+}
+
+.account-spend {
+  width: 95%;
+  border: 1px solid darkgray;
+  box-shadow: 5px 5px #ccc;
+}
+
+table.account-data {
+  width: 95%;
+}
+
+#bankDetails {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+#bankDetails th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+#bankDetails td, #bankDetails th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
