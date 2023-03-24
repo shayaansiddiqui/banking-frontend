@@ -8,6 +8,7 @@ export const environment = {
   webUrl: "https://localhost:4200/",
   defaultRowsPerPage: 10,
   pageSizeOptions: '10,25,50,100',
+  applicationName: 'Banking Site'
 };
 
 /*

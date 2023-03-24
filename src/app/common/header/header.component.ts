@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {animate, animation, style, state, transition, trigger, query, group} from '@angular/animations';
 import {RouterOutlet, ChildrenOutletContexts} from "@angular/router";
+import {environment} from "../../../environments/environment";
 
 const enterTransition = trigger('routeAnimations', [
   transition('* <=> *', [
@@ -35,8 +36,10 @@ const enterTransition = trigger('routeAnimations', [
 })
 
 export class HeaderComponent {
-  constructor(private contexts: ChildrenOutletContexts) {
+  applicationName: string;
 
+  constructor(private contexts: ChildrenOutletContexts) {
+    this.applicationName = environment.applicationName;
   }
 
   getRouteAnimationData() {
