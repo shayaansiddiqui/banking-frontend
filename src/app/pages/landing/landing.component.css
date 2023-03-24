@@ -27,7 +27,7 @@
 
 .card-body {
   background: #cdf3f7;
-  color:black;
+  color: black;
 }
 
 .card {
@@ -45,19 +45,16 @@
   text-decoration: none !important;
   transition: all .4s ease;
   background: var(--gradient) !important;
-  -webkit-text-fill-color: black !important;
+  -webkit-text-fill-color: #FF2A7AC3 !important;
   border: 5px solid #fff !important;
   box-shadow: #222 1px 0 10px;
   text-decoration: underline;
   margin-left: 50px;
-  color: black !important;
 }
 .landing{
   background-color: #000080;
 }
-.money{
-  color: black;
-}
+
 @media only screen and (max-width: 844px) {
 
 }
