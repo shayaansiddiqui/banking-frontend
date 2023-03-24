@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  today: Date = new Date();
+  points: number = 50000;
 
 }
