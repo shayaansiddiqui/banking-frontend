@@ -7,7 +7,8 @@ import {LoginComponent} from "./pages/login/login.component";
 import {LandingComponent} from './pages/landing/landing.component';
 import {HeaderComponent} from './common/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-
+import { DepositComponent } from './pages/deposit/deposit.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'Landing', pathMatch: 'full'},
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent, data: {animation: 'isUp'}},
   {path: 'Landing', component: LandingComponent},
   {path: 'Header', component: HeaderComponent},
-  { path: 'Dashboard', component: DashboardComponent}
+  { path: 'Dashboard', component: DashboardComponent},
+  { path: 'Deposit', component: DepositComponent},
+  { path: 'Transaction', component: TransactionComponent}
 ];
 
 

@@ -197,3 +197,7 @@ table.account-data {
 tr:hover {
   background-color: #ccc;
 }
+.sign-out{
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+}

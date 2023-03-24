@@ -18,7 +18,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FooterComponent } from './common/footer/footer.component';
 import { DepositComponent } from './pages/deposit/deposit.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { DateYearPipe } from './pipes/date.year.pipe';
+import {DateYearPipe} from "./pipes/date.year.pipe";
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { DateYearPipe } from './pipes/date.year.pipe';
     FooterComponent,
     DepositComponent,
     DashboardComponent,
+    TransactionComponent,
     DateYearPipe
   ],
   imports: [
