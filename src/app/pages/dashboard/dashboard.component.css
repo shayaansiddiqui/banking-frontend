@@ -164,36 +164,10 @@ div.menu-bar > ul:first-child > .nav-item > .nav-link:hover {
   width: 100%;
 }
 
-.account-spend {
-  width: 95%;
-  border: 1px solid darkgray;
-  box-shadow: 5px 5px #ccc;
-}
+
 
 table.account-data {
   width: 95%;
 }
 
-#bankDetails {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-
-#bankDetails th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
-}
-
-#bankDetails td, #bankDetails th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-tr:hover {
-  background-color: #ccc;
-}
