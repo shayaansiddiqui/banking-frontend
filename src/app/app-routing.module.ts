@@ -8,28 +8,28 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  // {path: '', redirectTo: 'landing'},
-  {path: 'registration', component: RegistrationComponent, data: {animation: 'isDown'}},
-  {path: 'login', component: LoginComponent, data: {animation: 'isUp'}},
-  {path: 'landing', component: LandingComponent},
-  {
-    path: 'business',
-    loadChildren: () => import('./pages/dashboard/dashboard.routing.module').then((m) => m.DashboardRoutingModule),
-    // canActivate: [AuthGuard],
-    // data: {roles: [Role.StandardUser, Role.StandardAdministrator, Role.StandardAdministrator]}
-  },
-  {path: 'dashboard', component: DashboardComponent},
-  {path: '**', redirectTo: '/Landing'},
+	{path: '', redirectTo: 'landing'},
+	{path: 'registration', component: RegistrationComponent, data: {animation: 'isDown'}},
+	{path: 'login', component: LoginComponent, data: {animation: 'isUp'}},
+	{path: 'landing', component: LandingComponent},
+	{
+		path: 'business',
+		loadChildren: () => import('./pages/dashboard/dashboard.routing.module').then((m) => m.DashboardRoutingModule),
+		// canActivate: [AuthGuard],
+		// data: {roles: [Role.StandardUser, Role.StandardAdministrator, Role.StandardAdministrator]}
+	},
+	{path: 'dashboard', component: DashboardComponent},
+	{path: '**', redirectTo: '/Landing'},
 ];
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [RouterModule]
+	declarations: [],
+	imports: [
+		CommonModule,
+		RouterModule.forRoot(routes)
+	],
+	exports: [RouterModule]
 
 })
 

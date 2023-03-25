@@ -16,7 +16,7 @@ import {LandingComponent} from './pages/landing/landing.component';
 import {HeaderComponent} from './common/header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FooterComponent } from './common/footer/footer.component';
-import { DepositComponent } from './pages/deposit/deposit.component';
+import { DepositComponent } from './pages/dashboard/deposit/deposit.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SummaryComponent } from './pages/dashboard/summary/summary.component';
 import { TransactionComponent } from './pages/dashboard/transaction/transaction.component';
