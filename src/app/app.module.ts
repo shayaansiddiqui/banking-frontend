@@ -15,43 +15,43 @@ import {RegistrationComponent} from "./pages/registration/registration.component
 import {LandingComponent} from './pages/landing/landing.component';
 import {HeaderComponent} from './common/header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { FooterComponent } from './common/footer/footer.component';
-import { DepositComponent } from './pages/dashboard/deposit/deposit.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { SummaryComponent } from './pages/dashboard/summary/summary.component';
-import { TransactionComponent } from './pages/dashboard/transaction/transaction.component';
+import {FooterComponent} from './common/footer/footer.component';
+import {DepositComponent} from './pages/dashboard/deposit/deposit.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {SummaryComponent} from './pages/dashboard/summary/summary.component';
+import {TransactionComponent} from './pages/dashboard/transaction/transaction.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegistrationComponent,
-    ToastComponent,
-    LandingComponent,
-    HeaderComponent,
-    FooterComponent,
-    DepositComponent,
-    DashboardComponent,
-    SummaryComponent,
-    TransactionComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    FormsModule,
-    NgClass,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    BsDatepickerModule.forRoot(),
-    MatAutocompleteModule,
-    HttpClientModule
-  ],
-  providers: [
-    HttpClient
-  ],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		LoginComponent,
+		RegistrationComponent,
+		ToastComponent,
+		LandingComponent,
+		HeaderComponent,
+		FooterComponent,
+		DepositComponent,
+		DashboardComponent,
+		SummaryComponent,
+		TransactionComponent
+	],
+	imports: [
+		BrowserModule,
+		NgbModule,
+		FormsModule,
+		NgClass,
+		BrowserAnimationsModule,
+		AppRoutingModule,
+		MatDialogModule,
+		ReactiveFormsModule,
+		BsDatepickerModule.forRoot(),
+		MatAutocompleteModule,
+		HttpClientModule
+	],
+	providers: [
+		HttpClient
+	],
+	bootstrap: [AppComponent]
 })
 
 export class AppModule {

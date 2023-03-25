@@ -4,16 +4,16 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {CustomerService} from './customer.service';
 
 describe('CustomerService', () => {
-  let service: CustomerService;
+	let service: CustomerService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
-    service = TestBed.inject(CustomerService);
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			imports: [HttpClientTestingModule],
+		});
+		service = TestBed.inject(CustomerService);
+	});
 
-  // it('should be created', () => {
-  //   expect(service).toBeTruthy();
-  // });
+	// it('should be created', () => {
+	//   expect(service).toBeTruthy();
+	// });
 });

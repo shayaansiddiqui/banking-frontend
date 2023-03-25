@@ -1,4 +1,3 @@
-
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {RegistrationComponent} from './registration.component';
 
@@ -12,33 +11,33 @@ import {RegistrationService} from "../../shared/registration.service";
 import {AddressApiDto} from "../../model/AddressApiDto";
 
 describe('RegistrationComponent', () => {
-  let apiModel: AddressApiDto[];
-  let component: RegistrationComponent;
-  let fixture: ComponentFixture<RegistrationComponent>;
-  let el: HTMLElement;
+	let apiModel: AddressApiDto[];
+	let component: RegistrationComponent;
+	let fixture: ComponentFixture<RegistrationComponent>;
+	let el: HTMLElement;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        MatDialogModule,
-        MatAutocompleteModule,
-        ReactiveFormsModule,
-        FormsModule,
-        BsDatepickerModule.forRoot()
-      ],
-      declarations: [RegistrationComponent,
-        ToastComponent,
-        RegistrationService
-      ]
-    })
-      .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [
+				MatDialogModule,
+				MatAutocompleteModule,
+				ReactiveFormsModule,
+				FormsModule,
+				BsDatepickerModule.forRoot()
+			],
+			declarations: [RegistrationComponent,
+				ToastComponent,
+				RegistrationService
+			]
+		})
+			.compileComponents();
 
-    fixture = TestBed.createComponent(RegistrationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(RegistrationComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

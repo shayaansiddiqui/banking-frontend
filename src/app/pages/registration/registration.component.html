@@ -1,107 +1,111 @@
 <div class="reg_form" style="padding-bottom:70px;">
-<div class="container reg">
-  <div style="padding-top: 20px;"><h2 class="text-center m-3 p-3x">Open An Account</h2></div>
-  <div class="centerRegistrationForm mt-5 mr-5 ">
-    <!-- animate__animated animate__zoomInDown  -->
-    <div class="card">
-      <div class="card-body p-4">
-        <form [formGroup]="service.registrationForm" (ngSubmit)="onSubmit()" [class.submitted]="submitted">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>First Name</label>
-                <input required minlength="5" name="firstName" formControlName="firstName" class="form-control">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Last Name</label>
-                <input required minlength="5" name="lastName" formControlName="lastName" class="form-control">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Email</label>
-                <input required type="email" class="form-control" formControlName="email" name="email">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Password</label>
-                <input required minlength="6" type="password" class="form-control" formControlName="password"
-                       name="password">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Date Of Birth</label>
-                <input type="text" [bsConfig]="datepickerConfig" [maxDate]="bsValue" class="form-control" bsDatepicker
-                       name="dateOfBirth"
-                       formControlName="dateOfBirth">
+	<div class="container reg">
+		<div style="padding-top: 20px;"><h2 class="text-center m-3 p-3x">Open An Account</h2></div>
+		<div class="centerRegistrationForm mt-5 mr-5 ">
+			<!-- animate__animated animate__zoomInDown  -->
+			<div class="card">
+				<div class="card-body p-4">
+					<form [formGroup]="service.registrationForm" (ngSubmit)="onSubmit()" [class.submitted]="submitted">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>First Name</label>
+									<input required minlength="5" name="firstName" formControlName="firstName"
+											 class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>Last Name</label>
+									<input required minlength="5" name="lastName" formControlName="lastName"
+											 class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>Email</label>
+									<input required type="email" class="form-control" formControlName="email" name="email">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>Password</label>
+									<input required minlength="6" type="password" class="form-control" formControlName="password"
+											 name="password">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>Date Of Birth</label>
+									<input type="text" [bsConfig]="datepickerConfig" [maxDate]="bsValue" class="form-control"
+											 bsDatepicker
+											 name="dateOfBirth"
+											 formControlName="dateOfBirth">
 
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="form-group p-3">
-                <label>Phone</label>
-
-
-                <input type="number" required formControlName="phone" name="phone" class="form-control">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Address</label>
-                <textarea type="textarea" #address (input)="GetAddressSugestions(address.value)"
-                          formControlName="address" id="address" name="address"
-                          class="form-control address"></textarea>
-                <div class="autocomplete" *ngIf="addressInput">
-                  <ul>
-                    <li class="autocomplete-items" *ngFor="let suggestion of apiModel"
-                        (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode);">{{suggestion.address_line1 + " " + suggestion.address_line2}}</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>City</label>
-                <input class="form-control" formControlName="city" type="text">
+								</div>
+							</div>
+							<div class="col-md-6 mb-4">
+								<div class="form-group p-3">
+									<label>Phone</label>
 
 
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <div class="form-group p-3">
-                <label>State</label>
-                <input class="form-control" formControlName="state" type="text" id="state" name="city">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group p-3">
-                <label>Zip Code</label>
-                <input type="number" id="postcode" required maxlength="6" name="postalCode" class="form-control"
-                       formControlName="postalCode">
-              </div>
-            </div>
+									<input type="number" required formControlName="phone" name="phone" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>Address</label>
+									<textarea type="textarea" #address (input)="GetAddressSugestions(address.value)"
+												 formControlName="address" id="address" name="address"
+												 class="form-control address"></textarea>
+									<div class="autocomplete" *ngIf="addressInput">
+										<ul>
+											<li class="autocomplete-items" *ngFor="let suggestion of apiModel"
+												 (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode);">{{suggestion.address_line1 + " " + suggestion.address_line2}}</li>
+										</ul>
+									</div>
 
-          </div>
-          <div class="form-group text-center">
-            <button type="submit" class="btn btn-block submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>City</label>
+									<input class="form-control" formControlName="city" type="text">
+
+
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 mb-4">
+								<div class="form-group p-3">
+									<label>State</label>
+									<input class="form-control" formControlName="state" type="text" id="state" name="city">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group p-3">
+									<label>Zip Code</label>
+									<input type="number" id="postcode" required maxlength="6" name="postalCode"
+											 class="form-control"
+											 formControlName="postalCode">
+								</div>
+							</div>
+
+						</div>
+						<div class="form-group text-center">
+							<button type="submit" class="btn btn-block submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <app-footer></app-footer>

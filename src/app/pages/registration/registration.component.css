@@ -1,89 +1,90 @@
-.reg_form{
-  background-color: #0073CF;
+.reg_form {
+	background-color: #0073CF;
 }
+
 .centerRegistrationForm {
-  padding-right: 10%;
-  padding-left: 10%;
+	padding-right: 10%;
+	padding-left: 10%;
 }
 
 .ro {
-  display: flex;
+	display: flex;
 }
 
 .modal .show {
-  display: block;
+	display: block;
 }
 
 
 .dark-modal .modal-content {
-  background-color: #292b2c;
-  color: white;
+	background-color: #292b2c;
+	color: white;
 }
 
 .dark-modal .close {
-  color: white;
+	color: white;
 }
 
 .light-blue-backdrop {
-  background-color: #b3bac0;
+	background-color: #b3bac0;
 }
 
 .submit {
-  color: white;
-  background-color: #202A44;
+	color: white;
+	background-color: #202A44;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 .autocomplete {
-  /*the container must be positioned relative:*/
-  position: relative;
-  display: inline-block;
+	/*the container must be positioned relative:*/
+	position: relative;
+	display: inline-block;
 }
 
 .autocomplete-items {
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
-  z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
+	border: 1px solid #d4d4d4;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 100%;
+	left: 0;
+	right: 0;
 }
 
 .autocomplete-items {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
-  border-top: 1px solid #d4d4d4;
+	padding: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+	border-top: 1px solid #d4d4d4;
 }
 
 .autocomplete-items:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
+	/*when hovering an item:*/
+	background-color: #e9e9e9;
 }
 
 .autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
+	/*when navigating through the items using the arrow keys:*/
+	background-color: DodgerBlue !important;
+	color: #ffffff;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
 ul {
-  width: 304px;
-  padding-left: 0;
-  z-index: 1;
+	width: 304px;
+	padding-left: 0;
+	z-index: 1;
 }
 
-.reg{
-  margin-top: 70px;
+.reg {
+	margin-top: 70px;
 }
