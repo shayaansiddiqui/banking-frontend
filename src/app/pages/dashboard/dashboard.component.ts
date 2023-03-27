@@ -8,4 +8,6 @@ import {Component} from '@angular/core';
 export class DashboardComponent {
 	today: Date = new Date();
 	points: number = 50000;
+	accountId: any = 1;
+	accountType: any = 'test';
 }

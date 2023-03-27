@@ -1,7 +1,8 @@
 .account-spend {
-  width: 95%;
-  border: 1px solid darkgray;
-  box-shadow: 5px 5px #ccc;
+	width: 95%;
+	border: 1px solid darkgray;
+	box-shadow: 5px 5px #ccc;
+	padding: 0 0 0 0;
 }
 
 #bankDetails {
