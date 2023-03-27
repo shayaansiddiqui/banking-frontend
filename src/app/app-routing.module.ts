@@ -13,7 +13,7 @@ const routes: Routes = [
 	{path: 'login', component: LoginComponent, data: {animation: 'isUp'}},
 	{path: 'landing', component: LandingComponent},
 	{
-		path: 'business',
+		path: 'dashboard',
 		loadChildren: () => import('./pages/dashboard/dashboard.routing.module').then((m) => m.DashboardRoutingModule),
 		// canActivate: [AuthGuard],
 		// data: {roles: [Role.StandardUser, Role.StandardAdministrator, Role.StandardAdministrator]}
