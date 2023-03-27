@@ -8,7 +8,7 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-	{path: '', redirectTo: 'landing'},
+
 	{path: 'registration', component: RegistrationComponent, data: {animation: 'isDown'}},
 	{path: 'login', component: LoginComponent, data: {animation: 'isUp'}},
 	{path: 'landing', component: LandingComponent},
@@ -19,7 +19,8 @@ const routes: Routes = [
 		// data: {roles: [Role.StandardUser, Role.StandardAdministrator, Role.StandardAdministrator]}
 	},
 	{path: 'dashboard', component: DashboardComponent},
-	{path: '**', redirectTo: '/Landing'},
+	{path: '', redirectTo: 'landing', pathMatch: "full"},
+
 ];
 
 

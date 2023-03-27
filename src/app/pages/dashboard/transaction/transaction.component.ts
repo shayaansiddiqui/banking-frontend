@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Transaction} from "../../../model/Transaction";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-transaction',
@@ -9,7 +10,18 @@ import {Transaction} from "../../../model/Transaction";
 export class TransactionComponent {
   transactions!: Transaction[];
 
-  constructor() {
+	id!: string;
+	accountType!: string;
+
+
+	ngOnInit() {
+		this.id = this.route.snapshot.paramMap.get('id')!;
+		this.accountType = this.route.snapshot.paramMap.get('accountType')!;
+		console.log("id ->", this.id);
+		console.log("accountType ->", this.accountType)
+	}
+
+  constructor(private route: ActivatedRoute) {
     this.transactions = [{
       id: 1,
       date: new Date(),
