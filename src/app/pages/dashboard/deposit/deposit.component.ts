@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BsDatepickerConfig} from "ngx-bootstrap/datepicker";
 
 @Component({
@@ -6,11 +6,14 @@ import {BsDatepickerConfig} from "ngx-bootstrap/datepicker";
   templateUrl: './deposit.component.html',
   styleUrls: ['./deposit.component.css']
 })
-export class DepositComponent {
+export class DepositComponent implements OnInit {
   bsValue = new Date();
   datepickerConfig: Partial<BsDatepickerConfig>;
 
   constructor(public BsDatepickerConfig: BsDatepickerConfig){
     this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
   }
+
+	ngOnInit(): void {
+	}
 }

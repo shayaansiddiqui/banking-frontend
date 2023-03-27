@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Transaction} from "../../../model/Transaction";
 import {ActivatedRoute} from "@angular/router";
 
@@ -7,13 +7,10 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.css']
 })
-export class TransactionComponent {
+export class TransactionComponent implements OnInit {
   transactions!: Transaction[];
-
 	id!: string;
 	accountType!: string;
-
-
 	ngOnInit() {
 		this.id = this.route.snapshot.paramMap.get('id')!;
 		this.accountType = this.route.snapshot.paramMap.get('accountType')!;
