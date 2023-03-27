@@ -5,4 +5,12 @@
 	right: 0;
 	height: 50px;
 	background-color: rgba(170, 170, 170, 1);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.footer-valign {
+	text-align: center;
 }

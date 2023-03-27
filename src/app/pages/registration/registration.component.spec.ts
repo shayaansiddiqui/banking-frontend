@@ -5,7 +5,7 @@ import {RegistrationComponent} from './registration.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'
 import {ToastComponent} from 'src/app/toast/toast.component';
-import {ReactiveFormsModule, FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {RegistrationService} from "../../shared/registration.service";
 import {AddressApiDto} from "../../model/AddressApiDto";

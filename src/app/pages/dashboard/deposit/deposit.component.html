@@ -5,28 +5,27 @@
 			<div class="col-12">
 				<div class="d-flex flex-column">
 					<p class="text mb-1">Person Name</p>
-					<input class="form-control mb-3" type="text" placeholder="Name" value="Barry Allen">
+					<input class="form-control mb-3" placeholder="Name" type="text" value="Barry Allen">
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="d-flex flex-column">
 					<p class="text mb-1">Cheque Number</p>
-					<input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+					<input class="form-control mb-3" placeholder="1234 5678 435678" type="text">
 				</div>
 			</div>
 			<div class="col-6">
 				<div class="d-flex flex-column">
 					<p class="text mb-1">Expiry</p>
-					<input class="form-control mb-3" type="text" type="text" [bsConfig]="datepickerConfig"
-							 [maxDate]="bsValue" class="form-control" bsDatepicker
-							 name="date"
-							 formControlName="dateOfBirth">
+					<input [bsConfig]="datepickerConfig" [maxDate]="bsValue" bsDatepicker
+							 class="form-control mb-3" formControlName="dateOfBirth" name="date"
+							 type="text">
 				</div>
 			</div>
 			<div class="col-6">
 				<div class="d-flex flex-column">
 					<p class="text mb-1">Signature</p>
-					<input class="form-control mb-3" type="text" placeholder="Testing">
+					<input class="form-control mb-3" placeholder="Testing" type="text">
 				</div>
 			</div>
 			<div class="col-12">

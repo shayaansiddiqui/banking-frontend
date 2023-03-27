@@ -5,20 +5,20 @@
 			<!-- animate__animated animate__zoomInDown  -->
 			<div class="card">
 				<div class="card-body p-4">
-					<form [formGroup]="service.registrationForm" (ngSubmit)="onSubmit()" [class.submitted]="submitted">
+					<form (ngSubmit)="onSubmit()" [class.submitted]="submitted" [formGroup]="service.registrationForm">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>First Name</label>
-									<input required minlength="5" name="firstName" formControlName="firstName"
-											 class="form-control">
+									<input class="form-control" formControlName="firstName" minlength="5" name="firstName"
+											 required>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Last Name</label>
-									<input required minlength="5" name="lastName" formControlName="lastName"
-											 class="form-control">
+									<input class="form-control" formControlName="lastName" minlength="5" name="lastName"
+											 required>
 								</div>
 							</div>
 						</div>
@@ -26,14 +26,14 @@
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Email</label>
-									<input required type="email" class="form-control" formControlName="email" name="email">
+									<input class="form-control" formControlName="email" name="email" required type="email">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Password</label>
-									<input required minlength="6" type="password" class="form-control" formControlName="password"
-											 name="password">
+									<input class="form-control" formControlName="password" minlength="6" name="password" required
+											 type="password">
 								</div>
 							</div>
 						</div>
@@ -41,10 +41,10 @@
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Date Of Birth</label>
-									<input type="text" [bsConfig]="datepickerConfig" [maxDate]="bsValue" class="form-control"
-											 bsDatepicker
+									<input [bsConfig]="datepickerConfig" [maxDate]="bsValue" bsDatepicker class="form-control"
+											 formControlName="dateOfBirth"
 											 name="dateOfBirth"
-											 formControlName="dateOfBirth">
+											 type="text">
 
 								</div>
 							</div>
@@ -53,7 +53,7 @@
 									<label>Phone</label>
 
 
-									<input type="number" required formControlName="phone" name="phone" class="form-control">
+									<input class="form-control" formControlName="phone" name="phone" required type="number">
 								</div>
 							</div>
 						</div>
@@ -61,13 +61,13 @@
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Address</label>
-									<textarea type="textarea" #address (input)="GetAddressSugestions(address.value)"
+									<textarea #address (input)="GetAddressSugestions(address.value)" class="form-control address"
 												 formControlName="address" id="address" name="address"
-												 class="form-control address"></textarea>
-									<div class="autocomplete" *ngIf="addressInput">
+												 type="textarea"></textarea>
+									<div *ngIf="addressInput" class="autocomplete">
 										<ul>
-											<li class="autocomplete-items" *ngFor="let suggestion of apiModel"
-												 (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode);">{{suggestion.address_line1 + " " + suggestion.address_line2}}</li>
+											<li (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode);" *ngFor="let suggestion of apiModel"
+												 class="autocomplete-items">{{suggestion.address_line1 + " " + suggestion.address_line2}}</li>
 										</ul>
 									</div>
 
@@ -86,21 +86,21 @@
 							<div class="col-md-6 mb-4">
 								<div class="form-group p-3">
 									<label>State</label>
-									<input class="form-control" formControlName="state" type="text" id="state" name="city">
+									<input class="form-control" formControlName="state" id="state" name="city" type="text">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Zip Code</label>
-									<input type="number" id="postcode" required maxlength="6" name="postalCode"
-											 class="form-control"
-											 formControlName="postalCode">
+									<input class="form-control" formControlName="postalCode" id="postcode" maxlength="6" name="postalCode"
+											 required
+											 type="number">
 								</div>
 							</div>
 
 						</div>
 						<div class="form-group text-center">
-							<button type="submit" class="btn btn-block submit">Submit</button>
+							<button class="btn btn-block submit" type="submit">Submit</button>
 						</div>
 					</form>
 				</div>

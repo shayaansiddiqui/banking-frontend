@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {animate, animation, style, state, transition, trigger, query, group} from '@angular/animations';
-import {RouterOutlet, ChildrenOutletContexts} from "@angular/router";
+import {animate, query, style, transition, trigger} from '@angular/animations';
+import {ChildrenOutletContexts} from "@angular/router";
 import {environment} from "../../../environments/environment";
 
 const enterTransition = trigger('routeAnimations', [

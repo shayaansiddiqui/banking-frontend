@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {RegistrationComponent} from "./pages/registration/registration.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {LandingComponent} from './pages/landing/landing.component';
@@ -15,7 +15,8 @@ const routes: Routes = [
 	{path: 'registration', component: RegistrationComponent, data: {animation: 'isDown'}},
 	{path: 'login', component: LoginComponent, data: {animation: 'isUp'}},
 	{path: 'landing', component: LandingComponent},
-	{path: 'dashboard', component: DashboardComponent, children: [
+	{
+		path: 'dashboard', component: DashboardComponent, children: [
 			{
 				path: "transaction/:id/:accountType",
 				component: TransactionComponent
@@ -24,7 +25,7 @@ const routes: Routes = [
 				path: "summary/:id",
 				component: SummaryComponent,
 
-			},  {
+			}, {
 				path: "deposit",
 				component: DepositComponent,
 			}]

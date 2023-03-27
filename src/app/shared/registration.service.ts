@@ -1,17 +1,11 @@
 import {Injectable} from '@angular/core';
-import {FormBuilder, Validators, FormGroup, FormControl} from '@angular/forms';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {throwError} from 'rxjs';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class RegistrationService {
 	readonly baseUrl = "https://localhost:7235/api/BankCustomer";
-
-	constructor(private fb: FormBuilder) {
-	}
-
 	registrationForm = this.fb.group({
 		id: [0],
 		firstName: ['', [Validators.required, Validators.maxLength(10)]],
@@ -25,6 +19,9 @@ export class RegistrationService {
 		phone: [0, [Validators.required, Validators.minLength(10)]],
 		address: ['', Validators.required]
 	})
+
+	constructor(private fb: FormBuilder) {
+	}
 
 
 // registerUser()

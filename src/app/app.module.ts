@@ -3,11 +3,11 @@ import {BrowserModule} from '@angular/platform-browser'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgClass} from '@angular/common';
 import {AppRoutingModule} from "./app-routing.module";
 import {MatDialogModule} from '@angular/material/dialog';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ToastComponent} from './toast/toast.component';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import {LoginComponent} from "./pages/login/login.component";
@@ -20,6 +20,12 @@ import {DepositComponent} from './pages/dashboard/deposit/deposit.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {SummaryComponent} from './pages/dashboard/summary/summary.component';
 import {TransactionComponent} from './pages/dashboard/transaction/transaction.component';
+import {ListcompanyComponent} from './pages/admin/companies/listcompany/listcompany.component';
+import {ListrelationshipComponent} from './pages/admin/relationship/listrelationship/listrelationship.component';
+import {AddrelationshipComponent} from './pages/admin/relationship/addrelationship/addrelationship.component';
+import {UpdatecompanyComponent} from './pages/admin/companies/updatecompany/updatecompany.component';
+import {CreatecompanyComponent} from './pages/admin/companies/createcompany/createcompany.component';
+import {UpdaterelationshipComponent} from './pages/admin/relationship/updaterelationship/updaterelationship.component';
 
 @NgModule({
 	declarations: [
@@ -33,7 +39,13 @@ import {TransactionComponent} from './pages/dashboard/transaction/transaction.co
 		DepositComponent,
 		DashboardComponent,
 		SummaryComponent,
-		TransactionComponent
+		TransactionComponent,
+		ListcompanyComponent,
+		ListrelationshipComponent,
+		AddrelationshipComponent,
+		UpdatecompanyComponent,
+		CreatecompanyComponent,
+		UpdaterelationshipComponent
 	],
 	imports: [
 		BrowserModule,

@@ -13,6 +13,7 @@ thead {
 	font-family: Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
+	margin: 0;
 }
 
 #bankDetails th {
@@ -25,4 +26,8 @@ thead {
 #bankDetails td, #bankDetails th {
 	border: 1px solid #ddd;
 	padding: 8px;
+}
+
+tbody > tr:hover {
+	background-color: #ccc;
 }

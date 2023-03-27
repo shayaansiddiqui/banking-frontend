@@ -1,6 +1,7 @@
-import {animate, animation, style, state, transition, trigger, query, group} from '@angular/animations';
+import {animate, query, style, transition, trigger} from '@angular/animations';
 import {Component} from '@angular/core'
-import {RouterOutlet, ChildrenOutletContexts} from "@angular/router";
+import {Title} from "@angular/platform-browser";
+import {environment} from "../environments/environment";
 
 //import { slider, transformer, fader, stepper} from '@angular/animations';
 
@@ -40,10 +41,10 @@ const enterTransition = trigger('routeAnimations', [
 
 
 export class AppComponent {
-	title = 'banking-frontend';
+	title = environment.applicationName;
 
-	constructor() {
-
+	constructor(title: Title) {
+		title.setTitle(this.title);
 	}
 
 	// getRouteAnimationData() {

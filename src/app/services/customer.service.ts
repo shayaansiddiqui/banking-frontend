@@ -1,6 +1,4 @@
 import {Injectable} from '@angular/core';
-import {LoginDto} from "../model/LoginDto";
-import {environment} from "@ng-bootstrap/ng-bootstrap/environment";
 import {HttpClient} from "@angular/common/http";
 import {UserModel} from "../model/User.model";
 

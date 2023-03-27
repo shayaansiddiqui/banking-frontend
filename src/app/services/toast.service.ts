@@ -4,10 +4,10 @@ import {Injectable, TemplateRef} from '@angular/core';
 	providedIn: 'root'
 })
 export class ToastService {
+	toasts: any[] = [];
+
 	constructor() {
 	}
-
-	toasts: any[] = [];
 
 	// Push new Toasts to array with content and options
 	show(textOrTpl: string | TemplateRef<any>, options: any = {}) {
