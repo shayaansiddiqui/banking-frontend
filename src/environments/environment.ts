@@ -3,12 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  baseUrl: "https://localhost:5001/api/",
-  webUrl: "https://localhost:4200/",
-  defaultRowsPerPage: 10,
-  pageSizeOptions: '10,25,50,100',
-  applicationName: 'Banking Site'
+	production: true,
+	baseUrl: "https://localhost:5001/api/",
+	webUrl: "https://localhost:4200/",
+	defaultRowsPerPage: 10,
+	pageSizeOptions: '10,25,50,100',
+	applicationName: 'OneOrangeTree LLC'
 };
 
 /*

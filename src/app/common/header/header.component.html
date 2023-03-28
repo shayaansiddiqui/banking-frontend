@@ -1,12 +1,12 @@
 <nav class="navbar">
-  <div class="container-fluid content">
-    <a class="navbar-brand logo">{{applicationName}}</a>
-    <form class="d-flex" role="login">
-      <!-- <a class="nav-link login-button" routerLink="/login">Login</a> -->
-    </form>
-  </div>
+	<div class="container-fluid content">
+		<a class="navbar-brand logo">{{applicationName}}</a>
+		<form class="d-flex">
+			<a class="nav-link login-button" routerLink="/login">Login</a>
+		</form>
+	</div>
 </nav>
-<div [@routeAnimations]="getRouteAnimationData()">
-  <router-outlet></router-outlet>
+<div [@routeAnimations]="getRouteAnimationData()" class="content">
+	<router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

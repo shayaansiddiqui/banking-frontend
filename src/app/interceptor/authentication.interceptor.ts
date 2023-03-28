@@ -1,46 +1,41 @@
 import {Injectable} from '@angular/core';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor
-} from '@angular/common/http';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {map, Observable, retry} from 'rxjs';
 import {AuthenticationService} from "../services/authentication.service";
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
-  private authToken: any;
-  private authRequest: any;
+	private authToken: any;
+	private authRequest: any;
 
-  constructor(private authService: AuthenticationService, private HttpClientTestingModule: HttpClientTestingModule) {
-  }
+	constructor(private authService: AuthenticationService, private HttpClientTestingModule: HttpClientTestingModule) {
+	}
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const req1 = request.clone({url: `${request.url}`});
-    // Check if the user is logged in
-    if (this.authService.isLoggedIn()) {
-      // Get the auth token from the service.
-      this.authToken = this.authService.getToken();
-    }
+	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+		const req1 = request.clone({url: `${request.url}`});
+		// Check if the user is logged in
+		if (this.authService.isLoggedIn()) {
+			// Get the auth token from the service.
+			this.authToken = this.authService.getToken();
+		}
 
-    // Clone the request and set the new header in one step.
-    if (this.authToken && req1.url != 'https://jsonip.com') {
-      this.authRequest = req1.clone({
-        setHeaders: {Authorization: `Bearer ${this.authToken}`}
-      });
-    } else {
-      this.authRequest = req1.clone();
-    }
+		// Clone the request and set the new header in one step.
+		if (this.authToken && req1.url != 'https://jsonip.com') {
+			this.authRequest = req1.clone({
+				setHeaders: {Authorization: `Bearer ${this.authToken}`}
+			});
+		} else {
+			this.authRequest = req1.clone();
+		}
 
-    // send cloned request with header to the next handler.
-    return next.handle(this.authRequest).pipe(
-      retry(1),
-      map(response => {
-        return response;
-      })
-    );
-  }
+		// send cloned request with header to the next handler.
+		return next.handle(this.authRequest).pipe(
+			retry(1),
+			map(response => {
+				return response;
+			})
+		);
+	}
 }

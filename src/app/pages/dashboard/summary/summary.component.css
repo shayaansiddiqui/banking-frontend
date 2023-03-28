@@ -1,0 +1,29 @@
+.account-spend {
+	width: 95%;
+	border: 1px solid darkgray;
+	box-shadow: 5px 5px #ccc;
+	padding: 0 0 0 0;
+}
+
+#bankDetails {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#bankDetails th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
+}
+
+#bankDetails td, #bankDetails th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+tbody > tr:hover {
+	background-color: #ccc;
+}

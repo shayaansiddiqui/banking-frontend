@@ -1,0 +1,33 @@
+.transaction {
+	width: 95%;
+	border: 1px solid darkgray;
+	box-shadow: 5px 5px #ccc;
+	padding: 0 0 0 0;
+}
+
+thead {
+	background-color: #ff133766;
+}
+
+#bankDetails {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0;
+}
+
+#bankDetails th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	color: black;
+}
+
+#bankDetails td, #bankDetails th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+tbody > tr:hover {
+	background-color: #ccc;
+}

@@ -1,0 +1,36 @@
+<div class="container mt-5 mb-5 account-spend">
+	<table id="bankDetails">
+		<tr>
+			<th>Account Name</th>
+			<th>Available Balance</th>
+			<th>Present Balance</th>
+			<th>Account Type</th>
+		</tr>
+		<tbody>
+		<tr>
+			<td>
+				<a routerLink="/dashboard/transaction/{{accountId}}/{{accountType}}">My Money</a>
+			</td>
+			<td>{{ 4000 | number:'':'en-US'}}</td>
+			<td>{{ 4000 | number:'':'en-US'}}</td>
+			<td>Spend</td>
+		</tr>
+		<tr>
+			<td>
+				<a routerLink="/dashboard/transaction/{{accountId}}/{{accountType}}">Savings</a>
+			</td>
+			<td>{{ 4000 | number:'':'en-US'}}</td>
+			<td>{{ 4000 | number:'':'en-US'}}</td>
+			<td>Savings</td>
+		</tr>
+		<tr>
+			<td>
+				<a routerLink="/dashboard/transaction/{{accountId}}/{{accountType}}">Charity</a>
+			</td>
+			<td>{{ 4000 | number:'':'en-US'}}</td>
+			<td>{{ 4000 | number:'':'en-US'}}</td>
+			<td>Charity</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
