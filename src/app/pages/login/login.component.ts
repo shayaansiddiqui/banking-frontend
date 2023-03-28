@@ -27,15 +27,17 @@ export class LoginComponent {
 		console.log(this.Service.loginForm.value);
 		if (this.Service.loginForm.valid) {
 			//console.log("Form Valid");
-			const headers = {'content-type': 'application/json'};
-			this.http.post(this.baseUrl, this.Service.loginForm.value, {headers}).subscribe(result => {
-				this.router.navigate(['Dashboard']);
-				//console.warn("result", result);
+			// const headers = {'content-type': 'application/json'};
+			// this.http.post(this.baseUrl, this.Service.loginForm.value, {headers}).subscribe(result => {
+			// 	alert("Test service");
+			// 	this.router.navigate(['Dashboard']);
+			// 	//console.warn("result", result);
 
 
-			}), (err: HttpErrorResponse) => {
-				console.log(err.message);
-			}
+			// }), (err: HttpErrorResponse) => {
+			// 	console.log(err.message);
+			// }
+			this.router.navigate(['dashboard']);
 		}
 	}
 

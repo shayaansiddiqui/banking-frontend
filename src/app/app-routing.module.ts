@@ -36,17 +36,15 @@ const routes: Routes = [
 
 ];
 
-//need to check the issue it comes after merging
+@NgModule({
+	declarations: [],
+	imports: [
+		CommonModule,
+		RouterModule.forRoot(routes)
+	],
+	exports: [RouterModule]
 
-// @NgModule({
-// 	declarations: [],
-// 	imports: [
-// 		CommonModule,
-// 		RouterModule.forRoot(routes)
-// 	],
-// 	exports: [RouterModule]
-
-// })
+})
 
 
 export class AppRoutingModule {
