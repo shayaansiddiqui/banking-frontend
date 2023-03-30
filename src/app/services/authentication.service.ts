@@ -32,6 +32,7 @@ export class AuthenticationService {
 	 *                Used to get, post or update records
 	 */
 	constructor(private httpClient: HttpClient) {
+		this.isLoggedIn();
 	}
 
 	ngOnInit(): void {

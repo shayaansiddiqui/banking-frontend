@@ -1,7 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {animate, query, style, transition, trigger} from '@angular/animations';
 import {ChildrenOutletContexts} from "@angular/router";
 import {environment} from "../../../environments/environment";
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 const enterTransition = trigger('routeAnimations', [
 	transition('* <=> *', [
@@ -35,10 +37,11 @@ const enterTransition = trigger('routeAnimations', [
 	]
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 	applicationName: any;
-
-	constructor(private contexts: ChildrenOutletContexts) {
+	@Input()
+	submitted: boolean = true;
+	constructor(private contexts: ChildrenOutletContexts, public AuthenticationService: AuthenticationService) {
 		this.applicationName = environment.applicationName;
 	}
 
@@ -46,5 +49,12 @@ export class HeaderComponent {
 		return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
 	}
 
+	ngOnInit() {
+		}
 
+		childData($event : any)
+		{
+			console.log("Tst - tst");
+				console.log($event);
+		}
 }

@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Login} from "../../shared/login";
 import {MatDialog} from "@angular/material/dialog";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {LoginService} from "../../shared/login.service";
 
@@ -12,10 +12,12 @@ import {LoginService} from "../../shared/login.service";
 })
 export class LoginComponent {
 	model = new Login();
-	baseUrl = "https://localhost:7235/api/Login";
+	baseUrl = "https://localhost:7235/api/BankCustomer/";
 	submitted: boolean = false;
 	err: any;
 	loginForm: any;
+	// @Output() myData = new EventEmitter<any>();
+	// @Output() myData: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(private dialog: MatDialog, private http: HttpClient, public router: Router, public Service: LoginService) {
 		this.onSubmit();
@@ -27,18 +29,29 @@ export class LoginComponent {
 		console.log(this.Service.loginForm.value);
 		if (this.Service.loginForm.valid) {
 			//console.log("Form Valid");
-			// const headers = {'content-type': 'application/json'};
-			// this.http.post(this.baseUrl, this.Service.loginForm.value, {headers}).subscribe(result => {
-			// 	alert("Test service");
-			// 	this.router.navigate(['Dashboard']);
-			// 	//console.warn("result", result);
+			const headers = {'content-type': 'application/json'};
+			//let queryParams = new HttpParams().set('email',this.Service.loginForm.email);
+			//console.log(this.Service.loginForm.value.email);
+			
+			this.http.get(this.baseUrl + this.Service.loginForm.value.email).subscribe(result => {
+				
+				//this.router.navigate(['dashboard']);
+				//console.warn("result", result);
 
-
-			// }), (err: HttpErrorResponse) => {
-			// 	console.log(err.message);
-			// }
-			this.router.navigate(['dashboard']);
+				if(result != null)
+				{
+					this.router.navigate(['dashboard']);
+				}
+			})
+			, (err: HttpErrorResponse) => {
+				console.log(err.message);
+			}
+		//	this.myData.emit("Testing");
 		}
+		// var user = localStorage.setItem('currentUser', JSON.stringify(this.loginForm.email));
+		// 	this.submitted = true;
+		// 	console.log(user);
+		
 	}
 
 	openDialog() {
