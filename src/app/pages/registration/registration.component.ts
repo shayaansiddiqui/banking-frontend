@@ -40,11 +40,11 @@ export class RegistrationComponent {
 	onSubmit() {
 		this.showSuccess();
 		this.submitted = true;
-		console.log(this.service.registrationForm.value);
-		alert("onSubmit");
+	//	console.log(this.service.registrationForm.value);
+		//alert("onSubmit");
 		if (this.service.registrationForm.valid) {
-			alert("registrationForm");
-			//this.service.registerUser();
+			//alert("registrationForm");
+			this.service.registerUser();
 			this.showSuccess();
 
 		} else {
@@ -101,7 +101,7 @@ export class RegistrationComponent {
 		this.submitted = false;
 	}
 
-	Setfields(cityname: string, statename: string, address: string, zipcode: string) {
+	Setfields(cityname: string, statename: string, address: string, zipcode: string, country:string) {
 		//console.log(cityname + " "+ statename);
 		this.addressInput = false;
 		this.service.registrationForm.patchValue(
@@ -109,7 +109,8 @@ export class RegistrationComponent {
 				city: cityname,
 				state: statename,
 				address: address,
-				postalCode: zipcode
+				postalCode: zipcode,
+				country: country
 			}
 		);
 		this.service.registrationForm.updateValueAndValidity();

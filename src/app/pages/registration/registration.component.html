@@ -53,12 +53,13 @@
 									<label>Phone</label>
 
 
-									<input class="form-control" formControlName="phone" name="phone" required type="number">
+									<input class="form-control" formControlName="phone" name="phone" required type="text">
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							
+							<div class="col-md-4">
 								<div class="form-group p-3">
 									<label>Address</label>
 									<textarea #address (input)="GetAddressSugestions(address.value)" class="form-control address"
@@ -66,14 +67,22 @@
 												 type="textarea"></textarea>
 									<div *ngIf="addressInput" class="autocomplete">
 										<ul>
-											<li (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode);" *ngFor="let suggestion of apiModel"
+											<li (click)="Setfields(suggestion.city,suggestion.state,suggestion.address_line1,suggestion.postcode,suggestion.country);" *ngFor="let suggestion of apiModel"
 												 class="autocomplete-items">{{suggestion.address_line1 + " " + suggestion.address_line2}}</li>
 										</ul>
 									</div>
 
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-4">
+								<div class="form-group p-3">
+									<label>Country</label>
+									<input class="form-control" formControlName="country" type="text">
+
+
+								</div>
+							</div>
+							<div class="col-md-4">
 								<div class="form-group p-3">
 									<label>City</label>
 									<input class="form-control" formControlName="city" type="text">
@@ -83,18 +92,24 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6 mb-4">
+							<div class="col-md-4 mb-4">
 								<div class="form-group p-3">
 									<label>State</label>
 									<input class="form-control" formControlName="state" id="state" name="city" type="text">
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<div class="form-group p-3">
 									<label>Zip Code</label>
-									<input class="form-control" formControlName="postalCode" id="postcode" maxlength="6" name="postalCode"
+											 <input class="form-control" formControlName="postalCode" id="postalCode" name="postalCode" required type="text">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group p-3">
+									<label>Status</label>
+									<input class="form-control" formControlName="status" id="status"  name="status"
 											 required
-											 type="number">
+											 type="boolean">
 								</div>
 							</div>
 
@@ -108,3 +123,4 @@
 		</div>
 	</div>
 </div>
+

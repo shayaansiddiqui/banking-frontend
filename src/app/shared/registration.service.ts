@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import {HttpClient, HttpErrorResponse, HttpParams, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
 	providedIn: 'root'
@@ -15,34 +16,29 @@ export class RegistrationService {
 		city: ['', Validators.required],
 		state: ['', Validators.required],
 		dateOfBirth: ['', Validators.required],
-		postalCode: ['', [Validators.required, Validators.minLength(6)]],
-		phone: [0, [Validators.required, Validators.minLength(10)]],
-		address: ['', Validators.required]
+		postalCode: ['', Validators.required],
+		phone: ['', Validators.required],
+		address: ['', Validators.required],
+		country: ['', Validators.required],
+		status: [true, Validators.required]
 	})
 
-	constructor(private fb: FormBuilder) {
+	constructor(private fb: FormBuilder, private http: HttpClient) {
 	}
 
 
-// registerUser()
-// {
-//         const headers = { 'content-type': 'application/json'};
-//           // console.log("Register User");
-//         this.http.post(this.baseUrl, this.registrationForm.value, {headers}).subscribe(result =>
-//           console.log("Testing "), err => {
-//             console.error(err);
-//             this.handleError(err);
-//   });
+	registerUser()
+	{
+	        const headers = { 'content-type': 'application/json'};
 
-	// else{
-	//   "<span>Please Enter New Email Address</span>";
-	// }
-
-
-// };
-
-
-// private handleError(error: HttpErrorResponse) {
+	        this.http.post(this.baseUrl, this.registrationForm.value, {headers}).subscribe(result =>
+	           {
+	            console.error(result);
+	            //this.handleError(err);
+	  });
+	};
+	
+	// private handleError(error: HttpErrorResponse) {
 //   if (error.status === 0) {
 //     // A client-side or network error occurred. Handle it accordingly.
 //     console.error('An error occurred:', error.error);

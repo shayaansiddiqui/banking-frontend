@@ -43,14 +43,12 @@ export class LoginComponent {
 					this.router.navigate(['dashboard']);
 				}
 			})
-			, (err: HttpErrorResponse) => {
+			, 
+			(err: HttpErrorResponse) => {
 				console.log(err.message);
 			}
 		//	this.myData.emit("Testing");
 		}
-		// var user = localStorage.setItem('currentUser', JSON.stringify(this.loginForm.email));
-		// 	this.submitted = true;
-		// 	console.log(user);
 		
 	}
 
