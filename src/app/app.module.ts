@@ -26,6 +26,9 @@ import {AddrelationshipComponent} from './pages/admin/relationship/addrelationsh
 import {UpdatecompanyComponent} from './pages/admin/companies/updatecompany/updatecompany.component';
 import {CreatecompanyComponent} from './pages/admin/companies/createcompany/createcompany.component';
 import {UpdaterelationshipComponent} from './pages/admin/relationship/updaterelationship/updaterelationship.component';
+import { SpendComponent } from './pages/spend/spend.component';
+import { TransferComponent } from './pages/transfer/transfer.component';
+import { SavingComponent } from './pages/saving/saving.component';
 
 @NgModule({
 	declarations: [
@@ -45,7 +48,10 @@ import {UpdaterelationshipComponent} from './pages/admin/relationship/updaterela
 		AddrelationshipComponent,
 		UpdatecompanyComponent,
 		CreatecompanyComponent,
-		UpdaterelationshipComponent
+		UpdaterelationshipComponent,
+  SpendComponent,
+  TransferComponent,
+  SavingComponent
 	],
 	imports: [
 		BrowserModule,
