@@ -32,15 +32,13 @@ export class RegistrationComponent {
 
 	constructor(public service: RegistrationService, private modalService: NgbModal, private router: Router, private activeRouter: ActivatedRoute, private dialog: MatDialog, private formBuilder: FormBuilder, public BsDatepickerConfig: BsDatepickerConfig, public toastService: ToastService, private HttpClient: HttpClient, public MatAutocompleteModule: MatAutocompleteModule, private Router: Router) {
 		this.datepickerConfig = Object.assign({}, {containerClass: 'theme-dark-blue'})
-
-		this.bsValue.setFullYear(this.bsValue.getFullYear() - 20);
-		console.log(this.bsValue);
+		// this.bsValue.setFullYear(this.bsValue.getFullYear() - 20);
 	}
 
 	onSubmit() {
 		this.showSuccess();
 		this.submitted = true;
-	//	console.log(this.service.registrationForm.value);
+		console.log(this.service.registrationForm.value);
 		//alert("onSubmit");
 		if (this.service.registrationForm.valid) {
 			//alert("registrationForm");
@@ -50,6 +48,40 @@ export class RegistrationComponent {
 		} else {
 			this.showError();
 		}
+	}
+
+	ageInYears: any = 0;
+	ageInMonths:any = 0;
+	findYear: boolean = false;
+	ageInDays:any = 0
+	calculateAge(ev:any){
+		let birthdate: Date = new Date(ev);
+		let currentdate: Date = new Date();
+		const millisecondsInYear = 31536000000;
+		const timeDiff = currentdate.getTime() - birthdate.getTime();
+		this.ageInYears = Math.floor(timeDiff / millisecondsInYear);
+	
+		let years = currentdate.getFullYear() - birthdate.getFullYear();
+		let months = currentdate.getMonth() - birthdate.getMonth();
+		let days = currentdate.getDate() - birthdate.getDate();
+	
+		if (days < 0) {
+		  months--;
+		  const lastMonth = new Date(currentdate.getFullYear(), currentdate.getMonth() - 1, 0);
+		  days += lastMonth.getDate();
+		}
+	
+		if (months < 0) {
+		  years--;
+		  months += 12;
+		}
+
+		this.ageInYears = years;
+		this.ageInMonths = months;
+		this.ageInDays = days;
+		this.findYear = years < 16 || (years === 16 && months === 0 && days === 0);
+		console.log('findYear=> ', this.findYear);
+		
 	}
 
 	showModal(element?: any) {

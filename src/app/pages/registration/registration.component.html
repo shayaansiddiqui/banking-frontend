@@ -10,15 +10,13 @@
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>First Name</label>
-									<input class="form-control" formControlName="firstName" minlength="5" name="firstName"
-											 required>
+									<input class="form-control" formControlName="firstName" minlength="5" name="firstName" required>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Last Name</label>
-									<input class="form-control" formControlName="lastName" minlength="5" name="lastName"
-											 required>
+									<input class="form-control" formControlName="lastName" minlength="5" name="lastName" required>
 								</div>
 							</div>
 						</div>
@@ -32,8 +30,7 @@
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Password</label>
-									<input class="form-control" formControlName="password" minlength="6" name="password" required
-											 type="password">
+									<input class="form-control" formControlName="password" minlength="6" name="password" required type="password">
 								</div>
 							</div>
 						</div>
@@ -41,18 +38,19 @@
 							<div class="col-md-6">
 								<div class="form-group p-3">
 									<label>Date Of Birth</label>
-									<input [bsConfig]="datepickerConfig" [maxDate]="bsValue" bsDatepicker class="form-control"
-											 formControlName="dateOfBirth"
-											 name="dateOfBirth"
-											 type="text">
-
+									<input [bsConfig]="datepickerConfig" (ngModelChange)="calculateAge($event)"  [maxDate]="bsValue" bsDatepicker class="form-control" formControlName="dateOfBirth" name="dateOfBirth" type="text">
+									<span [ngClass]="{'belowYears': findYear === true, 'belowMonth' : findYear === false }" *ngIf="ageInYears || ageInMonths || ageInDays">Age: {{ageInYears}} Year {{ageInMonths}} Months {{ageInDays}} Days</span>
 								</div>
 							</div>
+							<div class="col-md-6 mb-4" *ngIf="findYear && ageInYears < 16 || (ageInYears === 16 && ageInMonths === 0 && ageInDays === 0)">
+								<div class="form-group p-3">
+								  <label>Father Email</label>
+								  <input class="form-control" formControlName="fatherEmail" name="fatherEmail" required type="email">
+								</div>
+							  </div>
 							<div class="col-md-6 mb-4">
 								<div class="form-group p-3">
 									<label>Phone</label>
-
-
 									<input class="form-control" formControlName="phone" name="phone" required type="text">
 								</div>
 							</div>

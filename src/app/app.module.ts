@@ -29,6 +29,7 @@ import {UpdaterelationshipComponent} from './pages/admin/relationship/updaterela
 import { SpendComponent } from './pages/spend/spend.component';
 import { TransferComponent } from './pages/transfer/transfer.component';
 import { SavingComponent } from './pages/saving/saving.component';
+import { ForgotComponent } from './pages/forgot/forgot.component';
 
 @NgModule({
 	declarations: [
@@ -51,7 +52,8 @@ import { SavingComponent } from './pages/saving/saving.component';
 		UpdaterelationshipComponent,
   SpendComponent,
   TransferComponent,
-  SavingComponent
+  SavingComponent,
+  ForgotComponent
 	],
 	imports: [
 		BrowserModule,

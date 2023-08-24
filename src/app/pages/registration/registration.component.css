@@ -88,3 +88,11 @@ ul {
 .reg {
 	margin-top: 70px;
 }
+
+.belowYears{
+	color: red;
+}
+
+.belowMonth{
+	color: green;
+}
