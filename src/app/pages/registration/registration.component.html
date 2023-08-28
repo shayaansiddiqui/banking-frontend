@@ -42,7 +42,7 @@
 									<span [ngClass]="{'belowYears': findYear === true, 'belowMonth' : findYear === false }" *ngIf="ageInYears || ageInMonths || ageInDays">Age: {{ageInYears}} Year {{ageInMonths}} Months {{ageInDays}} Days</span>
 								</div>
 							</div>
-							<div class="col-md-6 mb-4" *ngIf="findYear && ageInYears < 16 || (ageInYears === 16 && ageInMonths === 0 && ageInDays === 0)">
+							<div class="col-md-6 mb-4" *ngIf="findYear && ageInYears < 18 || (ageInYears === 18 && ageInMonths === 0 && ageInDays === 0)">
 								<div class="form-group p-3">
 								  <label>Father Email</label>
 								  <input class="form-control" formControlName="fatherEmail" name="fatherEmail" required type="email">

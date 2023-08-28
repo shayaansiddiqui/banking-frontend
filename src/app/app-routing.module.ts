@@ -11,6 +11,7 @@ import {DepositComponent} from "./pages/dashboard/deposit/deposit.component";
 import { SpendComponent } from './pages/spend/spend.component';
 import { SavingComponent } from './pages/saving/saving.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 
 //the path property should have names starting with a lowerCase (previously all names started with a upperCase character) (ex: Landing -> landing)
@@ -23,6 +24,7 @@ const routes: Routes = [
 	{path: 'spend', component: SpendComponent},
 	{path: 'saving', component: SavingComponent},
 	{path: 'forgot', component: ForgotComponent},
+	{path: 'update-password', component: UpdatePasswordComponent},
 	{
 		path: 'dashboard', component: DashboardComponent, children: [
 			{

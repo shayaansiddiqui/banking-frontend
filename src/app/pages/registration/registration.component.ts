@@ -38,9 +38,9 @@ export class RegistrationComponent {
 	onSubmit() {
 		this.showSuccess();
 		this.submitted = true;
-		console.log(this.service.registrationForm.value);
+		console.log(this.service.registrationForm);
 		//alert("onSubmit");
-		if (this.service.registrationForm.valid) {
+		if (this.service.registrationForm) {
 			//alert("registrationForm");
 			this.service.registerUser();
 			this.showSuccess();
@@ -79,9 +79,8 @@ export class RegistrationComponent {
 		this.ageInYears = years;
 		this.ageInMonths = months;
 		this.ageInDays = days;
-		this.findYear = years < 16 || (years === 16 && months === 0 && days === 0);
+		this.findYear = years < 18 || (years === 18 && months === 0 && days === 0);
 		console.log('findYear=> ', this.findYear);
-		
 	}
 
 	showModal(element?: any) {
@@ -146,7 +145,6 @@ export class RegistrationComponent {
 			}
 		);
 		this.service.registrationForm.updateValueAndValidity();
-
 	}
 
 	showStandard() {

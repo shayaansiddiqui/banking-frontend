@@ -32,6 +32,8 @@ export class RegistrationService {
 	constructor(private fb: FormBuilder, private http: HttpClient) {}
 
 	registerUser() {
+		debugger
+		console.log('www => ', this.registrationForm);
 		const headers = { 'content-type': 'application/json' };
 		this.http.post(this.baseUrl, this.registrationForm.value, { headers }).subscribe((result) => {
 			console.log('result => ', result);

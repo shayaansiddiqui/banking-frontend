@@ -19,6 +19,7 @@ export class AuthenticationService {
 	 * user         - Observable which shares data between all observers
 	 */
 	url = environment.baseUrl + "Authentication/";
+	API_ENDPOINT = 'https://localhost:7235/api/'
 	JwtHelper = new JwtHelperService();
 	decodedToken: any;
 	isLogin = new BehaviorSubject<boolean>(false);
@@ -57,6 +58,15 @@ export class AuthenticationService {
 		}
 		return token && !this.JwtHelper.isTokenExpired(token);
 	}
+
+
+	updateForgotPass(data:any, body:any) {
+        return this.httpClient.post(this.API_ENDPOINT + data, body);
+    }
+
+	forgotPasswordDataGet(data:any, id:any) {
+        return this.httpClient.get(this.API_ENDPOINT + data + id);
+    }
 
 	/**
 	 * getToken

@@ -30,6 +30,7 @@ import { SpendComponent } from './pages/spend/spend.component';
 import { TransferComponent } from './pages/transfer/transfer.component';
 import { SavingComponent } from './pages/saving/saving.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 @NgModule({
 	declarations: [
@@ -53,7 +54,8 @@ import { ForgotComponent } from './pages/forgot/forgot.component';
   SpendComponent,
   TransferComponent,
   SavingComponent,
-  ForgotComponent
+  ForgotComponent,
+  UpdatePasswordComponent
 	],
 	imports: [
 		BrowserModule,
