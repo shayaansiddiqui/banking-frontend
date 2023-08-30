@@ -21,21 +21,23 @@ export class ForgotComponent {
    }
 
   onSubmit() {
-    this.loginForm.markAllAsTouched();
-    if (this.loginForm.valid) {
-      console.log('Check Form => ', this.loginForm.value);
-      this.auth.forgotPasswordDataGet('BankCustomer/', this.loginForm.value.email).subscribe(
-        (response: any) =>{
-          this.router.navigate(['/update-password']);
-            console.log('res => ', response);
-          },
-          error => {
-            console.log('err => ', error);
-          }
-        );
-    } else {
-      console.log('Form is not valid');
-    }
+    // this.loginForm.markAllAsTouched();
+    // if (this.loginForm.valid) {
+    //   console.log('Check Form => ', this.loginForm.value);
+    //   this.auth.forgotPasswordDataGet('BankCustomer/', this.loginForm.value.email).subscribe(
+    //     (response: any) =>{
+    //       this.router.navigate(['/update-password']);
+    //         console.log('res => ', response);
+    //       },
+    //       error => {
+    //         console.log('err => ', error);
+    //       }
+    //     );
+    // } else {
+    //   console.log('Form is not valid');
+    // }
+
+    this.router.navigate(['/update-password']);
   }
 
   formData(){

@@ -12,6 +12,7 @@ import { SpendComponent } from './pages/spend/spend.component';
 import { SavingComponent } from './pages/saving/saving.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { ToysDashboardComponent } from './pages/toys-dashboard/toys-dashboard.component';
 
 
 //the path property should have names starting with a lowerCase (previously all names started with a upperCase character) (ex: Landing -> landing)
@@ -41,6 +42,10 @@ const routes: Routes = [
 			}]
 	},
 	{path: '', redirectTo: 'landing', pathMatch: "full"},
+	{
+		path: "toys-dashboard",
+		component: ToysDashboardComponent,
+	}
 
 ];
 

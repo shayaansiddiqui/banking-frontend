@@ -2,3 +2,32 @@
 form.ng-invalid.submitted input.ng-invalid {
 	border-color: red;
 }
+@media screen and (max-width:520px){
+    .logo{
+        font-size: 29px !important;
+    }
+}
+@media screen and (max-width:430px){
+	.logo{
+        font-size: 23px !important;
+    }
+}
+@media screen and (max-width:380px){
+	.logo{
+		margin-left: 0 !important;
+        font-size: 20px !important;
+    }
+	.login-button{
+		font-size: 15px !important;
+		margin-right: 10px !important;
+	}
+}
+@media screen and (max-width:263px){
+	.logo{
+		margin-left: 0 !important;
+        font-size: 15px !important;
+    }
+	.login-button{
+		font-size: 13px !important;
+	}
+}

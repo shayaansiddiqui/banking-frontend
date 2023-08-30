@@ -31,6 +31,7 @@ import { TransferComponent } from './pages/transfer/transfer.component';
 import { SavingComponent } from './pages/saving/saving.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { ToysDashboardComponent } from './pages/toys-dashboard/toys-dashboard.component';
 
 @NgModule({
 	declarations: [
@@ -55,7 +56,8 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
   TransferComponent,
   SavingComponent,
   ForgotComponent,
-  UpdatePasswordComponent
+  UpdatePasswordComponent,
+  ToysDashboardComponent
 	],
 	imports: [
 		BrowserModule,
