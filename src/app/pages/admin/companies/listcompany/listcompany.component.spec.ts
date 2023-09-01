@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListcompanyComponent } from './listcompany.component';
+import {ListcompanyComponent} from './listcompany.component';
 
 describe('ListcompanyComponent', () => {
-  let component: ListcompanyComponent;
-  let fixture: ComponentFixture<ListcompanyComponent>;
+	let component: ListcompanyComponent;
+	let fixture: ComponentFixture<ListcompanyComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ListcompanyComponent ]
-    })
-    .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [ListcompanyComponent]
+		})
+			.compileComponents();
 
-    fixture = TestBed.createComponent(ListcompanyComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(ListcompanyComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

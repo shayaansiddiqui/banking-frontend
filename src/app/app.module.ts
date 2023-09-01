@@ -26,13 +26,13 @@ import {AddrelationshipComponent} from './pages/admin/relationship/addrelationsh
 import {UpdatecompanyComponent} from './pages/admin/companies/updatecompany/updatecompany.component';
 import {CreatecompanyComponent} from './pages/admin/companies/createcompany/createcompany.component';
 import {UpdaterelationshipComponent} from './pages/admin/relationship/updaterelationship/updaterelationship.component';
-import { SpendComponent } from './pages/spend/spend.component';
-import { TransferComponent } from './pages/transfer/transfer.component';
-import { SavingComponent } from './pages/saving/saving.component';
-import { ForgotComponent } from './pages/forgot/forgot.component';
-import { UpdatePasswordComponent } from './update-password/update-password.component';
-import { ToysDashboardComponent } from './pages/toys-dashboard/toys-dashboard.component';
-import { ReceiptComponent } from './pages/receipt/receipt.component';
+import {SpendComponent} from './pages/spend/spend.component';
+import {TransferComponent} from './pages/transfer/transfer.component';
+import {SavingComponent} from './pages/saving/saving.component';
+import {ForgotComponent} from './pages/forgot/forgot.component';
+import {UpdatePasswordComponent} from './update-password/update-password.component';
+import {ToysDashboardComponent} from './pages/toys-dashboard/toys-dashboard.component';
+import {ReceiptComponent} from './pages/receipt/receipt.component';
 
 
 @NgModule({
@@ -54,13 +54,13 @@ import { ReceiptComponent } from './pages/receipt/receipt.component';
 		UpdatecompanyComponent,
 		CreatecompanyComponent,
 		UpdaterelationshipComponent,
-  SpendComponent,
-  TransferComponent,
-  SavingComponent,
-  ForgotComponent,
-  UpdatePasswordComponent,
-  ToysDashboardComponent,
-  ReceiptComponent
+		SpendComponent,
+		TransferComponent,
+		SavingComponent,
+		ForgotComponent,
+		UpdatePasswordComponent,
+		ToysDashboardComponent,
+		ReceiptComponent
 
 	],
 	imports: [

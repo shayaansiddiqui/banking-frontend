@@ -32,24 +32,23 @@ export class LoginComponent {
 			const headers = {'content-type': 'application/json'};
 			//let queryParams = new HttpParams().set('email',this.Service.loginForm.email);
 			//console.log(this.Service.loginForm.value.email);
-			
+
 			this.http.get(this.baseUrl + this.Service.loginForm.value.email).subscribe(result => {
-				
+
 				//this.router.navigate(['dashboard']);
 				//console.warn("result", result);
 
-				if(result != null)
-				{
+				if (result != null) {
 					this.router.navigate(['dashboard']);
 				}
 			})
-			, 
-			(err: HttpErrorResponse) => {
-				console.log(err.message);
-			}
-		//	this.myData.emit("Testing");
+				,
+				(err: HttpErrorResponse) => {
+					console.log(err.message);
+				}
+			//	this.myData.emit("Testing");
 		}
-		
+
 	}
 
 	openDialog() {

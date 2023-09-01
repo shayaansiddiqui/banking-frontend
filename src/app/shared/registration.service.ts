@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {Injectable} from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 import {
 	HttpClient,
 	HttpErrorResponse,
@@ -29,13 +29,14 @@ export class RegistrationService {
 		status: [true, Validators.required],
 	});
 
-	constructor(private fb: FormBuilder, private http: HttpClient) {}
+	constructor(private fb: FormBuilder, private http: HttpClient) {
+	}
 
 	registerUser() {
 		debugger
 		console.log('www => ', this.registrationForm);
-		const headers = { 'content-type': 'application/json' };
-		this.http.post(this.baseUrl, this.registrationForm.value, { headers }).subscribe((result) => {
+		const headers = {'content-type': 'application/json'};
+		this.http.post(this.baseUrl, this.registrationForm.value, {headers}).subscribe((result) => {
 			console.log('result => ', result);
 			this.registrationForm.reset()
 			console.error(result);

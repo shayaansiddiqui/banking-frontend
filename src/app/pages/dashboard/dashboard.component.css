@@ -167,8 +167,9 @@ div.menu-bar > ul:first-child > .nav-item > .nav-link:hover {
 table.account-data {
 	width: 95%;
 }
+
 .button {
-	background-color: #000080;/* Green */
+	background-color: #000080; /* Green */
 	color: white;
 	padding: 7px;
 	text-align: center;
@@ -180,6 +181,6 @@ table.account-data {
 	border-radius: 12px;
 	border-style: solid;
 	border-color: #69707a;
-  }
-  
+}
+
 

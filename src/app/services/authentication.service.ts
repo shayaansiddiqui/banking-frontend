@@ -60,13 +60,13 @@ export class AuthenticationService {
 	}
 
 
-	updateForgotPass(data:any, body:any) {
-        return this.httpClient.post(this.API_ENDPOINT + data, body);
-    }
+	updateForgotPass(data: any, body: any) {
+		return this.httpClient.post(this.API_ENDPOINT + data, body);
+	}
 
-	forgotPasswordDataGet(data:any, id:any) {
-        return this.httpClient.get(this.API_ENDPOINT + data + id);
-    }
+	forgotPasswordDataGet(data: any, id: any) {
+		return this.httpClient.get(this.API_ENDPOINT + data + id);
+	}
 
 	/**
 	 * getToken

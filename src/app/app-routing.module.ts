@@ -8,13 +8,13 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {TransactionComponent} from "./pages/dashboard/transaction/transaction.component";
 import {SummaryComponent} from "./pages/dashboard/summary/summary.component";
 import {DepositComponent} from "./pages/dashboard/deposit/deposit.component";
-import { SpendComponent } from './pages/spend/spend.component';
-import { SavingComponent } from './pages/saving/saving.component';
-import { ForgotComponent } from './pages/forgot/forgot.component';
-import { UpdatePasswordComponent } from './update-password/update-password.component';
-import { ToysDashboardComponent } from './pages/toys-dashboard/toys-dashboard.component';
-import { RequestPurchaseFormComponent } from './pages/request-purchase-form/request-purchase-form.component';
-import { ReceiptComponent } from './pages/receipt/receipt.component';
+import {SpendComponent} from './pages/spend/spend.component';
+import {SavingComponent} from './pages/saving/saving.component';
+import {ForgotComponent} from './pages/forgot/forgot.component';
+import {UpdatePasswordComponent} from './update-password/update-password.component';
+import {ToysDashboardComponent} from './pages/toys-dashboard/toys-dashboard.component';
+import {RequestPurchaseFormComponent} from './pages/request-purchase-form/request-purchase-form.component';
+import {ReceiptComponent} from './pages/receipt/receipt.component';
 
 
 //the path property should have names starting with a lowerCase (previously all names started with a upperCase character) (ex: Landing -> landing)

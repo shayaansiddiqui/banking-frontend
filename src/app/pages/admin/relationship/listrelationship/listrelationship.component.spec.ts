@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListrelationshipComponent } from './listrelationship.component';
+import {ListrelationshipComponent} from './listrelationship.component';
 
 describe('ListrelationshipComponent', () => {
-  let component: ListrelationshipComponent;
-  let fixture: ComponentFixture<ListrelationshipComponent>;
+	let component: ListrelationshipComponent;
+	let fixture: ComponentFixture<ListrelationshipComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ListrelationshipComponent ]
-    })
-    .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [ListrelationshipComponent]
+		})
+			.compileComponents();
 
-    fixture = TestBed.createComponent(ListrelationshipComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(ListrelationshipComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

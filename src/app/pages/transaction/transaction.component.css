@@ -1,18 +1,21 @@
-thead{
-    background-color: #ff133766;
+thead {
+	background-color: #ff133766;
 }
+
 #bankDetails {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  #bankDetails th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    color: black;
-  }
-  #bankDetails td, #bankDetails th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#bankDetails th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	color: black;
+}
+
+#bankDetails td, #bankDetails th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}

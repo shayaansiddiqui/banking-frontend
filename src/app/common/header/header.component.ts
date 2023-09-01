@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {animate, query, style, transition, trigger} from '@angular/animations';
 import {ChildrenOutletContexts} from "@angular/router";
 import {environment} from "../../../environments/environment";
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import {AuthenticationService} from 'src/app/services/authentication.service';
 
 
 const enterTransition = trigger('routeAnimations', [
@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit {
 	applicationName: any;
 	@Input()
 	submitted: boolean = true;
+
 	constructor(private contexts: ChildrenOutletContexts, public AuthenticationService: AuthenticationService) {
 		this.applicationName = environment.applicationName;
 	}
@@ -50,11 +51,10 @@ export class HeaderComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		}
+	}
 
-		childData($event : any)
-		{
-			console.log("Tst - tst");
-				console.log($event);
-		}
+	childData($event: any) {
+		console.log("Tst - tst");
+		console.log($event);
+	}
 }

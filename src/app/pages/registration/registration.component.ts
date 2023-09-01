@@ -51,29 +51,30 @@ export class RegistrationComponent {
 	}
 
 	ageInYears: any = 0;
-	ageInMonths:any = 0;
+	ageInMonths: any = 0;
 	findYear: boolean = false;
-	ageInDays:any = 0
-	calculateAge(ev:any){
+	ageInDays: any = 0
+
+	calculateAge(ev: any) {
 		let birthdate: Date = new Date(ev);
 		let currentdate: Date = new Date();
 		const millisecondsInYear = 31536000000;
 		const timeDiff = currentdate.getTime() - birthdate.getTime();
 		this.ageInYears = Math.floor(timeDiff / millisecondsInYear);
-	
+
 		let years = currentdate.getFullYear() - birthdate.getFullYear();
 		let months = currentdate.getMonth() - birthdate.getMonth();
 		let days = currentdate.getDate() - birthdate.getDate();
-	
+
 		if (days < 0) {
-		  months--;
-		  const lastMonth = new Date(currentdate.getFullYear(), currentdate.getMonth() - 1, 0);
-		  days += lastMonth.getDate();
+			months--;
+			const lastMonth = new Date(currentdate.getFullYear(), currentdate.getMonth() - 1, 0);
+			days += lastMonth.getDate();
 		}
-	
+
 		if (months < 0) {
-		  years--;
-		  months += 12;
+			years--;
+			months += 12;
 		}
 
 		this.ageInYears = years;
@@ -132,7 +133,7 @@ export class RegistrationComponent {
 		this.submitted = false;
 	}
 
-	Setfields(cityname: string, statename: string, address: string, zipcode: string, country:string) {
+	Setfields(cityname: string, statename: string, address: string, zipcode: string, country: string) {
 		//console.log(cityname + " "+ statename);
 		this.addressInput = false;
 		this.service.registrationForm.patchValue(

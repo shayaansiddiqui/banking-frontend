@@ -6,25 +6,28 @@
 			<div class="row g-0 d-flex align-items-center">
 				<div class="col-lg-4 d-none d-lg-flex">
 					<img alt="loginImage" class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5"
-						  src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"/>
+						src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"/>
 				</div>
 				<div class="col-lg-8">
 					<div class="card-body py-5 px-md-5">
 
-						<form (ngSubmit)="onSubmit()" [class.submitted]="submitted" [formGroup]="Service.loginForm">
+						<form (ngSubmit)="onSubmit()" [class.submitted]="submitted"
+							 [formGroup]="Service.loginForm">
 							<!-- Email input -->
 							<div class="form-outline mb-4">
 								<h2 class="text-center m-3 p-5x"> Login Form </h2>
 								<label class="form-label" for="email">Email address</label>
-								<input class="form-control" formControlName="email" id="email" name="email" type="email">
+								<input class="form-control" formControlName="email" id="email" name="email"
+									  type="email">
 
 							</div>
 
 							<!-- Password input -->
 							<div class="form-outline mb-4">
 								<label class="form-label" for="password">Password</label>
-								<input class="form-control" formControlName="password" id="password" name="password"
-										 type="password">
+								<input class="form-control" formControlName="password" id="password"
+									  name="password"
+									  type="password">
 
 							</div>
 
@@ -33,8 +36,9 @@
 								<div class="col d-flex justify-content-center">
 									<!-- Checkbox -->
 									<div class="form-check">
-										<input checked class="form-check-input check" id="rememberme" name="rememberme" type="checkbox"
-												 value=""/>
+										<input checked class="form-check-input check" id="rememberme"
+											  name="rememberme" type="checkbox"
+											  value=""/>
 										<label class="form-check-label" for="rememberme"> Remember me </label>
 									</div>
 								</div>

@@ -1,32 +1,34 @@
 <div class="container">
-  <div class="main-forgot-section">
-    <div class="login-form-image">
-      <img src="./assets/images/forgot-password.webp">
-    </div>
-    <div class="login form">
-      <h3><i class="fa fa-lock fa-4x"></i></h3>
-      <header>Forgot Password ?</header>
-      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
-        <label for="input-field">Please Enter your Email adress.You will receive a link to create a new password via
-          email </label>
-        <input class="forgot-field" type="text" formControlName="email" placeholder="Enter your email" required>
-        <div
-          *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="loginForm.controls['email'].errors?.required">
-            Email is required.
-          </div>
-          <div *ngIf="loginForm.controls['email'].errors?.pattern">
-            Email format is not valid
-          </div>
-        </div>
-        <button type="submit" class="button"> Forgot Password </button>
-      </form>
-      <div class="signup">
-        <a href="javascriptvoid()">Signup</a>
-        <a href="javascriptvoid()">Login</a>
-      </div>
-    </div>
-  </div>
+	<div class="main-forgot-section">
+		<div class="login-form-image">
+			<img src="./assets/images/forgot-password.webp">
+		</div>
+		<div class="login form">
+			<h3><i class="fa fa-lock fa-4x"></i></h3>
+			<header>Forgot Password ?</header>
+			<form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+				<label for="input-field">Please Enter your Email adress.You will receive a link to create a new
+					password via
+					email </label>
+				<input class="forgot-field" type="text" formControlName="email" placeholder="Enter your email"
+					  required>
+				<div
+					*ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
+					class="alert alert-danger">
+					<div *ngIf="loginForm.controls['email'].errors?.required">
+						Email is required.
+					</div>
+					<div *ngIf="loginForm.controls['email'].errors?.pattern">
+						Email format is not valid
+					</div>
+				</div>
+				<button type="submit" class="button"> Forgot Password</button>
+			</form>
+			<div class="signup">
+				<a href="javascriptvoid()">Signup</a>
+				<a href="javascriptvoid()">Login</a>
+			</div>
+		</div>
+	</div>
 
 </div>

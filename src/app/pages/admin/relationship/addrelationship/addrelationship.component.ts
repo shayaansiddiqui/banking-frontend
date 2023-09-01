@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-addrelationship',
-  templateUrl: './addrelationship.component.html',
-  styleUrls: ['./addrelationship.component.css']
+	selector: 'app-addrelationship',
+	templateUrl: './addrelationship.component.html',
+	styleUrls: ['./addrelationship.component.css']
 })
 export class AddrelationshipComponent {
 

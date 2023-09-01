@@ -1,58 +1,71 @@
 label.label {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 13px;
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 13px;
 }
+
 input[type=text] {
-    width: 100%;
-    height: 40px;
+	width: 100%;
+	height: 40px;
 }
+
 .label.tax {
-    margin-left: 15px;
+	margin-left: 15px;
 }
+
 p.if-online {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 13px;
-    color: blue;
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 13px;
+	color: blue;
 }
+
 textarea#notes {
-    width: 100%;
+	width: 100%;
 }
+
 button {
-    width: 100%;
+	width: 100%;
 }
+
 button.clear {
-    background: yellow;
-    font-weight: 500;
-    font-size: 20px;
+	background: yellow;
+	font-weight: 500;
+	font-size: 20px;
 }
-button.clear:hover,button.cancel:hover{
-    background: #ffffff;
+
+button.clear:hover, button.cancel:hover {
+	background: #ffffff;
 }
+
 button.cancel {
-    background: red;
-    font-size: 20px;
-    font-weight: 500;
+	background: red;
+	font-size: 20px;
+	font-weight: 500;
 }
+
 button.approve {
-    background: green;
-    font-size: 20px;
-    font-weight: 500;
+	background: green;
+	font-size: 20px;
+	font-weight: 500;
 }
-button.approve:hover{
-    background: #ffffff;
+
+button.approve:hover {
+	background: #ffffff;
 }
-@media screen and (max-width:991px){
-    button.cancel,button.approve,button.clear{
-        font-size: 14px  !important;
-    }
+
+@media screen and (max-width: 991px) {
+	button.cancel, button.approve, button.clear {
+		font-size: 14px !important;
+	}
 }
-@media screen and (max-width:572px){
-    label.label{
-        font-size: 15px;
-}
-p.if-online{
-    font-size: 15px;
-}
+
+@media screen and (max-width: 572px) {
+	label.label {
+		font-size: 15px;
+	}
+
+	p.if-online {
+		font-size: 15px;
+	}
 }
