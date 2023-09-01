@@ -32,6 +32,8 @@ import { SavingComponent } from './pages/saving/saving.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ToysDashboardComponent } from './pages/toys-dashboard/toys-dashboard.component';
+import { ReceiptComponent } from './pages/receipt/receipt.component';
+
 
 @NgModule({
 	declarations: [
@@ -57,7 +59,9 @@ import { ToysDashboardComponent } from './pages/toys-dashboard/toys-dashboard.co
   SavingComponent,
   ForgotComponent,
   UpdatePasswordComponent,
-  ToysDashboardComponent
+  ToysDashboardComponent,
+  ReceiptComponent
+
 	],
 	imports: [
 		BrowserModule,

@@ -13,6 +13,8 @@ import { SavingComponent } from './pages/saving/saving.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ToysDashboardComponent } from './pages/toys-dashboard/toys-dashboard.component';
+import { RequestPurchaseFormComponent } from './pages/request-purchase-form/request-purchase-form.component';
+import { ReceiptComponent } from './pages/receipt/receipt.component';
 
 
 //the path property should have names starting with a lowerCase (previously all names started with a upperCase character) (ex: Landing -> landing)
@@ -45,6 +47,14 @@ const routes: Routes = [
 	{
 		path: "toys-dashboard",
 		component: ToysDashboardComponent,
+	},
+	{
+		path: "request-purchase-form",
+		component: RequestPurchaseFormComponent,
+	},
+	{
+		path: "receipt",
+		component: ReceiptComponent,
 	}
 
 ];

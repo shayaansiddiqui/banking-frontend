@@ -1,0 +1,74 @@
+<div class="container">
+    <div class=" row justify-content-between col-md-12 col-sm-12">
+        <div class="col-md-6 col-sm-12">
+            <label for="anumber" class="label">Account Number:</label> <br>
+            <input type="text" id="account-number" name="anumber" placeholder="xxxxxxxxxxxxxxxx" readonly>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label for="purchase-amount" class="label">Amount of purchase:</label> <br>
+            <input type="text" id="purchase-amount" name="amount" placeholder="purchase-amount">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <input type="checkbox" id="tax-include" name="tax" value="tax"> 
+            <label for="tax-include"  class="label tax"> Tax Included </label>
+        </div>
+        <div class="col-md-6">
+            <input type="checkbox" id="online-purchase" name="online" value="online-purchase">
+            <label for="online-purchase"  class="label tax">Online Purchase </label><br>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <p class="if-online ">
+            If Online Purchase :
+        </p>
+        <div class="col-md-6 col-sm-12">
+            <input type="checkbox" id="in-app" name="purchase" value="in-app-purchase"> 
+            <label for="in-app"  class="label tax">In app purchase </label>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <p class="if-online ">
+            If Not in app purchase then website URL:
+        </p>
+        <div class="col-md-6 col-sm-12">
+            <input type="text" id="website-url" name="url" placeholder="Enter website URL">
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-6 col-sm-12">
+            <label for="item" class="label">Item Name:</label> <br>
+            <input type="text" id="item-name" name="item" placeholder="Item Name" >
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label for="manufacturer" class="label">Manufacturer Name:</label> <br>
+            <input type="text" id="manufacturer-name" name="manufacturer" placeholder="Manufacturer Name">
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 pt-3">
+        <div class="col-md-6 col-sm-12">
+            <input type="checkbox" id="gift" name="gift" value="gift"> 
+            <label for="gift"  class="label tax">Gift</label>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <label for="gifted-person" class="label">Name of person:</label> <br>
+        <input type="text" id="person-name" name="person-name" placeholder="Name" >
+    </div>
+    <div class="col-md-12 col-sm-12 mt-2">
+        <label for="notes" class="label">Notes:</label> <br>
+        <textarea id="notes" name="notes" rows="4" cols="50"></textarea>
+    </div>
+    <div class="row justify-content-between mt-3 mb-4">
+        <div class="col-md-2 col-sm-12 mt-2">
+            <button type="button" class="clear">Clear</button>
+        </div>
+        <div class="col-md-2 col-sm-12 text-center mt-2">
+            <button type="button" class="cancel">cancel</button>
+        </div>
+        <div class="col-md-3 col-sm-12 text-end mt-2">
+            <button type="button" class="approve">Ask for approval</button>
+        </div>
+    </div>
+</div>

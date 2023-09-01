@@ -1,0 +1,22 @@
+.main-section{
+    height: 82vh;
+}
+@media screen and (max-width:768px){
+    td.available-balance {
+        font-size: 15px !important;
+    }
+    span.heading {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:350px){
+    span.heading {
+        font-size: 10px;
+    }
+    td.available-balance {
+        font-size: 10px !important;
+    }
+    td.sub-headings {
+        font-size: 10px;
+    }
+}
